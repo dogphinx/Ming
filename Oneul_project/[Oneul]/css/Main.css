@@ -1,0 +1,3948 @@
+/* * {
+    font-family: 'Noto Sans KR', sans-serif;
+} */
+
+#container {
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+
+/* 헤더영역 */
+header {
+    background-color: transparent;
+    position: fixed;
+    z-index: 90;
+    width: 100%;
+    height: 125px;
+    /* height: 350px; 이여야 서브메뉴 다보임*/
+    overflow: hidden;
+    padding: 0 2.5%;
+    transition: all 0.5s;
+}
+
+.header125 {
+    height: 125px;
+}
+
+.header350 {
+    height: 350px;
+}
+
+.header_notPC {
+    background-color: white;
+}
+
+.header_enter {
+    background-color: white;
+}
+
+.header_enter:after {
+    display: block;
+}
+
+.header_leave {
+    height: 125px;
+    background-color: transparent;
+}
+
+
+header>h1 {
+    width: 170px;
+    position: relative;
+    top: 38px;
+}
+
+header::after {
+    content: '';
+    border-bottom: 1px solid gray;
+    position: absolute;
+    top: 124px;
+    left: 0;
+    width: 100%;
+    opacity: 0.3;
+    display: none;
+}
+
+.scroll_header::after {
+    display: block;
+}
+
+/* 메인메뉴 */
+header>nav {
+    width: 70%;
+    position: relative;
+    top: -60px;
+    right: -22%;
+}
+
+header>nav>ul>li {
+    float: left;
+    text-align: center;
+    position: relative;
+    margin: 0 3.8%;
+    transition: all 0.5s;
+}
+
+header>nav>ul>li>a {
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    padding: 47px 0 0;
+    margin-bottom: 45px;
+}
+
+header>nav>ul>li>a::after {
+    content: '';
+    width: 0%;
+    left: 50%;
+    height: 32%;
+    display: block;
+    position: absolute;
+    margin-top: 3px;
+    border-bottom: 2px solid #c67931;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+header>nav>ul>li:hover>a::after {
+    width: 100%;
+    opacity: 1;
+    left: 0;
+}
+
+.main_gnb_hover {
+    color: black;
+}
+
+
+/* 서브메뉴 */
+#gnb>ul>li ul {
+    display: block;
+    position: absolute;
+    padding: 19.5px 10px;
+    top: 120px;
+}
+
+#gnb>ul>li:nth-child(2)>ul {
+    left: -70%;
+}
+
+#gnb>ul>li:nth-child(4)>ul {
+    left: -115%;
+}
+
+#gnb>ul>li ul>li {
+    padding: 10px 0;
+    font-size: 1.2rem;
+    opacity: 0.6;
+}
+
+#gnb>ul>li:nth-child(4) ul>li {
+    width: 200px;
+}
+
+#gnb>ul>li ul>li>a {
+    position: relative;
+}
+
+#gnb>ul>li ul>li>a::after {
+    content: '';
+    width: 0%;
+    left: 50%;
+    display: block;
+    position: absolute;
+    border-bottom: 1.5px solid black;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+#gnb>ul>li ul>li>a:hover::after {
+    opacity: 1;
+    width: 100%;
+    left: 0;
+}
+
+
+/* 햄버거 메뉴 */
+.icon_menu {
+    all: unset;
+    width: 200px;
+    height: 125px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 91;
+}
+
+.icon_menu>img {
+    position: absolute;
+    top: 33%;
+    right: 25%;
+    cursor: pointer;
+}
+
+.icon_menu_gnb {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(56, 51, 47);
+    position: fixed;
+    top: -100%;
+    opacity: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all .1s;
+}
+
+.icon_menu_gnb.icon_menu_on {
+    top: 0;
+    opacity: 1;
+    transition: all .1s;
+}
+
+
+.icon_menu_gnb>h2 {
+    margin-top: 50px;
+}
+
+.icon_menu_gnb>h2>a {
+    display: block;
+}
+
+.icon_menu_gnb>img {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    cursor: pointer;
+}
+
+.icon_menu_gnb>nav {
+    height: 450px;
+    margin: 140px 0 20px;
+    width: 1400px;
+}
+
+.icon_menu_gnb>nav>ul>li {
+    float: left;
+    text-align: center;
+    position: relative;
+    margin: 0px 5%;
+    transition: all 0.5s;
+}
+
+.icon_menu_gnb>nav>ul>li>a {
+    display: block;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.icon_menu_gnb>nav>ul>li>a::after {
+    content: '';
+    width: 0%;
+    left: 50%;
+    display: block;
+    position: absolute;
+    border-bottom: 2px solid #c67931;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.icon_menu_gnb>nav>ul>li:hover>a::after {
+    width: 100%;
+    left: 0;
+    opacity: 1;
+}
+
+.icon_menu_subgnb {
+    display: block;
+    width: 300px;
+    position: absolute;
+    margin-top: 25px;
+}
+
+.icon_menu_gnb>nav>ul>li:nth-child(2)>.icon_menu_subgnb {
+    left: -150%;
+}
+
+.icon_menu_gnb>nav>ul>li:nth-child(4)>.icon_menu_subgnb {
+    left: -145%;
+}
+
+.icon_menu_subgnb>li {
+    padding: 8px 0;
+    display: block;
+}
+
+.icon_menu_subgnb>li>a {
+    color: #ffe9d6;
+    font-size: 1.3rem;
+    font-weight: 100;
+    opacity: 0.5;
+    position: relative;
+}
+
+.icon_menu_subgnb>li>a:hover {
+    opacity: 1;
+}
+
+.icon_menu_subgnb>li>a::after {
+    content: '';
+    width: 0%;
+    left: 50%;
+    display: block;
+    position: absolute;
+    border-bottom: 2px solid #ffe9d6;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+.icon_menu_subgnb>li>a:hover::after {
+    opacity: 1;
+    width: 100%;
+    left: 0;
+}
+
+.icon_menu_gnb>div:last-child>img {
+    margin: 0 10px;
+}
+
+/* 스크롤 했을 때 헤더영역 */
+.scroll_header {
+    top: -4%;
+    background-color: white;
+}
+
+.scroll_gnb {
+    padding: 51px 0 0;
+    margin-bottom: 0;
+}
+
+
+.scroll_logo {
+    width: 75%;
+    padding-top: 15%;
+}
+
+.scroll_icon_menu {
+    top: -1.8%;
+}
+
+/* 메인 슬라이드 */
+.main_img_slide {
+    display: flex;
+    width: 100%;
+    height: 960px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-1,
+.slide-2,
+.slide-3,
+.slide-4,
+.slide-5,
+.slide-6 {
+    width: 100%;
+    height: 960px;
+    /* background-attachment: fixed; */
+    /* background-position: center center; */
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    width: 100%;
+    top: 28%;
+    text-align: center;
+    color: white;
+}
+
+.sl-cp-trnas {
+    animation: slide-captionTrans 1s;
+}
+
+@keyframes slide-captionTrans {
+    from {
+        opacity: 0;
+        top: 23%;
+    }
+
+    to {
+        opacity: 1;
+        top: 28%;
+    }
+}
+
+.slide-caption h2 {
+    padding-top: 3.8%;
+    font-size: 5rem;
+}
+
+.slide-caption>h2:nth-child(2) {
+    font-size: 20px;
+}
+
+.slide-caption>p {
+    padding-top: 20px;
+    transition-property: opacity, left, top, height;
+    transition-duration: 3s, 5s, 3s, 5s;
+    font-size: 1.3rem;
+}
+
+.slide-caption>p:nth-child(3) {
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
+.main_img_slide>div:first-child>div:nth-child(2)>img {
+    padding-top: 1.5%;
+}
+
+.main_img_slide>div:first-child>div:nth-child(2)>h2 {
+    padding-top: 1.7%;
+}
+
+/* 슬라이드 1번 more 버튼 */
+.slide-caption>a {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    padding-top: 40px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.slide-caption>a:hover {
+    color: #c67931;
+}
+
+.slide-caption>a:after {
+    content: '';
+    display: block;
+    width: 90px;
+    border-bottom: 2px solid #bcbcbc;
+    margin: 10px auto;
+}
+
+.slide-caption>a:hover:after {
+    border-bottom: 2px solid #c67931;
+}
+
+
+/* 슬라이드 화살표 버튼 */
+.prev>img,
+.next>img {
+    width: 80%;
+    height: 140%;
+}
+
+.prev {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 45%;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+    left: 7%;
+    cursor: pointer;
+}
+
+.next {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 45%;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+    right: 7%;
+    cursor: pointer;
+}
+
+/* 슬라이드 dot 버튼 */
+.dot-container {
+    display: flex;
+    flex-basis: row wrap;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    bottom: 250px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    margin: 0 0.7rem;
+}
+
+
+
+.dot_line:after {
+    content: '';
+    display: block;
+    width: 8px;
+    border-bottom: 2px solid white;
+    margin: 20px 0;
+    opacity: 1;
+}
+
+.active,
+.dot:hover {
+    opacity: 1;
+}
+
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.6
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* 슬라이드 autoplay 재생 정지 버튼 */
+.auto_button {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.auto_button>i {
+    color: white;
+    font-size: 0.5rem;
+    position: absolute;
+}
+
+.auto_button>.off {
+    display: none;
+}
+
+/* Reservation modal */
+.reservation {
+    all: unset;
+    color: white;
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid white;
+    cursor: pointer;
+    width: 220px;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.reservation>img {
+    margin-right: 10%;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal_overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.modal_content {
+    background-color: white;
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal_content>h4 {
+    position: relative;
+    margin-top: 10px;
+    left: -30%;
+}
+
+.modal_content>button:nth-child(2) {
+    all: unset;
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* 모달창 안에 달력 */
+.calendar-box {
+    width: 370px;
+    margin: 10px;
+    padding: 5px 10px 5px;
+    text-align: center;
+    font-weight: 800;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    cursor: default;
+}
+
+.ctr-box {
+    padding: 0 16px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.ctr-box .btn-cal {
+    position: relative;
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.ctr-box .btn-cal:after {
+    content: '<';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.ctr-box .btn-cal.next {
+    float: right;
+}
+
+.ctr-box .btn-cal.next:after {
+    content: '>';
+}
+
+.cal-table {
+    width: 100%;
+}
+
+.cal-table th {
+    width: 14.2857%;
+    padding-bottom: 5px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.cal-table td {
+    padding: 3px 0;
+    height: 50px;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+.cal-table td.day {
+    position: relative;
+    cursor: pointer;
+}
+
+.cal-table td.today {
+    background: #ffd255;
+    border-radius: 10%;
+    color: #fff;
+}
+
+.cal-table td.day-active {
+    background: #ff8585;
+    border-radius: 10%;
+    color: #fff;
+}
+
+.cal-table td.has-event:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: #FFC107;
+}
+
+.select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.select>select {
+    all: unset;
+    width: 150px;
+    padding: 10px 15px 15px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.select>i:nth-child(3) {
+    position: absolute;
+    bottom: 19%;
+    left: 6%;
+}
+
+.select>i:nth-child(4) {
+    position: absolute;
+    bottom: 19%;
+    left: 43%;
+}
+
+.select>i:nth-child(5) {
+    position: absolute;
+    bottom: 19%;
+    right: 43%;
+}
+
+.select>i:last-child {
+    position: absolute;
+    bottom: 19%;
+    right: 6%;
+}
+
+.select>select:nth-child(1) {
+    border-right: 1px solid #ddd;
+}
+
+.modal_content>button:last-child {
+    all: unset;
+    width: 300px;
+    height: 50px;
+    background: orangered;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+/* 컨텐츠 영역 */
+
+/* 오늘 밸류 */
+
+#content {
+    width: 100%;
+}
+
+#oneul_value {
+    margin: 8.3% 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#oneul_value>div:first-child {
+    margin: 3% 1%;
+    padding: 0 8% 0 10%;
+}
+
+.mini_title {
+    color: #c67931;
+    font-size: 1.3rem;
+    letter-spacing: 0.3rem;
+}
+
+.main_title {
+    font-size: 3.3rem;
+}
+
+#oneul_value>div:first-child>p:nth-child(3) {
+    padding: 50px 0 30px;
+    line-height: 1.7rem;
+    font-size: 1.1rem;
+}
+
+#oneul_value>div:first-child>p:last-child {
+    opacity: 0.7;
+    line-height: 1.7rem;
+}
+
+.value_img {
+    width: 50%;
+}
+
+.value_img>img {
+    width: 100%;
+}
+
+/* 오늘 메뉴 */
+#onuel_menu {
+    width: 90%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+#onuel_menu>div {
+    padding: 50px 0 100px;
+}
+
+#onuel_menu>div>div {
+    position: relative;
+    display: inline-block;
+}
+
+#onuel_menu>div>div>a {
+    display: inline-block;
+    position: relative;
+}
+
+#onuel_menu>div>div>a>p {
+    position: absolute;
+    color: white;
+    font-size: 1.1rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+#onuel_menu>div>div>a>p>span {
+    font-weight: 100;
+    font-size: 1.1rem;
+}
+
+.mini_border {
+    position: absolute;
+    display: block;
+    width: 370px;
+    border-bottom: 1px solid white;
+    top: 400px;
+    left: 20px;
+}
+
+#onuel_menu>div>div>a>p:nth-child(2) {
+    top: 10px;
+    left: 30px;
+    width: 350px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid white;
+    font-size: 1.7rem;
+}
+
+#onuel_menu>div>div>a>img:nth-child(3) {
+    position: absolute;
+    top: 18px;
+    left: 350px;
+}
+
+#onuel_menu>div>div>a:hover>img:nth-child(3) {
+    animation: btnBeat 0.4s infinite;
+}
+
+@keyframes btnBeat {
+    0% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#onuel_menu>div>div>a>p:nth-child(5) {
+    top: 420px;
+    left: 20px;
+}
+
+#onuel_menu>div>div>a>p:nth-child(6) {
+    top: 420px;
+    left: 200px;
+    padding-left: 30px;
+    border-left: 1px solid rgba(255, 255, 255, 0.4)
+}
+
+
+.Luncheon {
+    top: 75px;
+}
+
+.Luncheon>a>p:nth-child(5),
+.Luncheon>a>p:nth-child(6) {
+    width: 150px;
+}
+
+.Dinner>a>p:nth-child(5) {
+    width: 150px;
+}
+
+#onuel_menu .Dinner>a>p:last-child {
+    width: 230px;
+    left: 160px;
+}
+
+.Banquet {
+    top: 75px;
+}
+
+.Banquet>a>p:nth-child(5) {
+    width: 200px;
+}
+
+.Signature {}
+
+.Signature>a>p:nth-child(5) {
+    width: 150px;
+}
+
+.Signature>a>p:last-child {
+    width: 230px;
+    left: 160px;
+}
+
+
+/* 오늘 피플 */
+#onuel_people {
+    width: 90%;
+    margin: 150px auto 0;
+    /* height: 900px; */
+    position: relative;
+}
+
+#onuel_people>.mini_title {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+#onuel_people>.main_title {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+}
+
+.mini_career {
+    color: #c67931;
+    font-size: 1.4rem;
+}
+
+.people_name_kor {
+    font-size: 2rem;
+}
+
+.people_name_kor>span {
+    font-weight: bold;
+}
+
+.people_name_en {
+    font-size: 1.4rem;
+}
+
+#onuel_people>div>div>p {
+    padding-top: 2px;
+}
+
+#onuel_people>div>div>ul {
+    padding-top: 20px;
+}
+
+#onuel_people>div>div>ul>li {
+    padding-bottom: 5px;
+}
+
+#onuel_people>div>div>ul>li>p {
+    color: black;
+    font-weight: 550;
+}
+
+/* 셰프1 */
+#Chef1 {
+    display: inline-block;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 700px;
+}
+
+#Chef1>img {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#Chef1>div {
+    background-color: white;
+    position: relative;
+    top: -290px;
+    left: 430px;
+    width: 400px;
+    height: 300px;
+    padding-top: 70px;
+    padding-left: 50px;
+}
+
+
+#Chef1 .main_career>li {
+    list-style: square;
+    color: #c67931;
+    position: relative;
+    left: 20px;
+}
+
+/* 셰프2 */
+#Chef2 {
+    display: inline-block;
+    position: absolute;
+    right: 0%;
+    top: 150px;
+    width: 700px;
+    text-align: right;
+}
+
+#Chef2>img {
+    position: relative;
+}
+
+#Chef2>div {
+    background-color: white;
+    position: relative;
+    top: -340px;
+    right: 70px;
+    width: 400px;
+    height: 350px;
+    padding-top: 70px;
+    padding-right: 50px;
+}
+
+#Chef2 .main_career {
+    position: relative;
+    right: -400px;
+
+}
+
+#Chef2 .main_career>li {
+    list-style: disc;
+    color: #c67931;
+    position: relative;
+    right: 40px;
+}
+
+#Chef2 .main_career>li>p {
+    position: relative;
+    left: -380px;
+}
+
+/* 스크롤 애니메이션 .sa 부터 실행되고 -> 방향 실행되고 -> show 적용이 되서 제자리로 온다.*/
+.sa {
+    opacity: 0;
+    transition: all 1s ease;
+
+}
+
+.sa-right {
+    /* transform: translate(-80px, 0); */
+    transform: translate(-13%, 0);
+}
+
+.sa-left {
+    /* transform: translate(80px, 0); */
+    transform: translate(13%, 0);
+}
+
+.sa-top {
+    /* transform: translate(0, 80px); */
+    transform: translate(0, 15%);
+}
+
+.sa.show {
+    opacity: 1;
+    transform: none;
+}
+
+
+
+/* Room 소개 영역 */
+.intro_room {
+    width: 91%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro_room>div {
+    position: relative;
+    margin: 0 0.5%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro_room>div>img:nth-child(1) {
+    width: 100%;
+}
+
+.intro_room>div>img:nth-child(2) {
+    display: none;
+}
+
+.room_floor {
+    position: absolute;
+    top: 45%;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: lighter;
+}
+
+.room_floor_on {
+    top: 35%;
+    font-size: 1.5rem;
+}
+
+.room_name {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.room_name_on {
+    top: 41%;
+    font-size: 3rem;
+}
+
+.room_intro {
+    display: none;
+    position: absolute;
+    top: 55%;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.more {
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    color: white;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+.off {
+    display: none;
+}
+
+#intro_room .on {
+    display: block;
+    width: 100%;
+}
+
+#intro_room>div>p:last-child:hover>img {
+    animation: arrow 0.4s infinite;
+}
+
+@keyframes arrow {
+    from {
+        transform: translateX(-7px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+
+/* 인스타그램 영역 */
+#insta {
+    background-color: #f5f5f5;
+    margin-top: 230px;
+    padding: 150px 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2% 1%;
+    align-items: center;
+}
+
+#insta>div img {
+    width: 100%;
+    object-fit: fill;
+}
+
+#insta>div:first-child {
+    text-align: center;
+}
+
+#insta>div:first-child img {
+    width: unset;
+}
+
+#insta>div:first-child>a {
+    line-height: 28px;
+    display: block;
+    width: 100%;
+}
+
+
+/* 하단 맵 영역 */
+.map_area {
+    position: relative;
+    background-color: #f5f5f5;
+}
+
+#map {
+    width: 100%;
+    height: 800px;
+}
+
+#place_guide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    z-index: 10;
+}
+
+#place_guide>div:first-child {
+    position: relative;
+}
+
+#place_guide>div:first-child>p {
+    width: 120px;
+    height: 120px;
+    background-color: #c67931;
+    color: white;
+    position: absolute;
+    line-height: 10rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#place_guide>div:first-child>img:nth-child(2) {
+    position: absolute;
+    top: 8%;
+    left: 48.5px;
+}
+
+#place_guide>div:first-child>img:last-child {
+    object-fit: cover;
+    object-position: 20%;
+    width: 270px;
+    height: 510px;
+}
+
+#place_guide>div:last-child {
+    width: 600px;
+    height: 510px;
+    background-color: white;
+    padding: 55px;
+}
+
+.location::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-bottom: 1px solid gray;
+    opacity: 0.5;
+}
+
+.location>p:first-child {
+    font-weight: bold;
+}
+
+.location>p:nth-child(2) {
+    color: #c67931;
+    font-size: 2rem;
+    padding: 10px 0;
+}
+
+.location>address {
+    font-style: normal;
+    padding: 10px 0;
+}
+
+.location>p:nth-child(4),
+.location>p:nth-child(5) {
+    opacity: 0.7;
+}
+
+.location>p:nth-child(5) {
+    padding-bottom: 20px;
+}
+
+.contact_number::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-bottom: 1px solid gray;
+    opacity: 0.5;
+}
+
+.contact_number>img:first-child {
+    position: relative;
+    bottom: 13px;
+    margin-right: 10px;
+}
+
+.contact_number>div:nth-child(2) {
+    display: inline-block;
+    padding: 25px 10px;
+}
+
+.contact_number>div:nth-child(2)>p:first-child {
+    color: #c67931;
+    font-size: 1.1rem;
+}
+
+.contact_number>div:nth-child(3) {
+    display: inline-block;
+    padding: 25px 0;
+}
+
+.contact_number>div:nth-child(3)>p:first-child {
+    color: #c67931;
+    font-size: 1.1rem;
+}
+
+.business_hours {
+    padding: 25px 0;
+}
+
+.business_hours>img {
+    float: left;
+    margin-right: 10px;
+    padding: 30px 15px 25px 0;
+}
+
+.business_hours>p {
+    padding-top: 5px;
+}
+
+.business_hours>p>span {
+    color: #c67931;
+    font-size: 1.1rem;
+}
+
+.business_hours>p:nth-child(2) {
+    float: left;
+    margin-right: 15px;
+}
+
+.business_hours>p:nth-child(3) {
+    float: left;
+}
+
+.business_hours>p:nth-child(4) {
+    width: 350px;
+    float: left;
+}
+
+.business_hours>p:nth-child(5) {
+    float: left;
+}
+
+
+
+
+
+/* 푸터 영역 */
+footer {
+    background-color: #383431;
+    height: 280px;
+    position: relative;
+}
+
+footer>img:first-child {
+    position: absolute;
+    top: 60px;
+    left: 100px;
+}
+
+.footer_text {
+    position: absolute;
+    top: 60px;
+    left: 29%;
+    color: #d5d5d4;
+}
+
+.footer_text>p:first-child {
+    opacity: 0.8;
+    padding-bottom: 6px;
+}
+
+.footer_text>p:nth-child(2) {
+    opacity: 0.5;
+    padding-bottom: 20px;
+    font-weight: lighter;
+}
+
+.footer_text>p:last-child {
+    opacity: 0.25;
+    font-weight: lighter;
+}
+
+.footer_icons {
+    /* background-color: violet; */
+    display: flex;
+    justify-content: center;
+    align-items: initial;
+    width: 400px;
+    position: absolute;
+    right: 2%;
+    top: 20%;
+}
+
+.footer_icons>div:nth-child(2) {
+    background: #56534e;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 0 7%;
+}
+
+.footer_icons>div:nth-child(2)>a {
+    position: relative;
+    top: 18%;
+    left: 18%;
+}
+
+.family_site {
+    right: 8%;
+    width: 200px;
+    background-color: #c67931;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s;
+    height: 46px;
+    overflow: hidden;
+}
+
+.family_site_on {
+    height: 98px;
+}
+
+.family_site>p:first-child {
+    position: relative;
+    top: 0%;
+    font-size: 1.2rem;
+    opacity: 1;
+    padding: 10px 40px;
+    color: white;
+}
+
+.family_site>p>img {
+    position: absolute;
+    top: 20px;
+    right: 15%;
+}
+
+.family_site>p:last-child {
+    position: relative;
+    border-top: 1px solid white;
+    opacity: 1;
+    padding-bottom: 0;
+    font-weight: normal;
+}
+
+.family_site>p:last-child>a {
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 15px 25px;
+}
+
+.family_site>p:last-child>a:hover {
+    background-color: #cd6133;
+}
+
+.rotate_arrow {
+    transform: rotateX(180deg);
+}
+
+/* 모바일 대응용 */
+.notPC {
+    display: none;
+}
+
+
+/* ------------------------------------------------------------------반응형 */
+
+@media (min-width: 1831px) and (max-width: 1860px) {
+
+    /* 컨텐츠 영역 */
+
+    /* 오늘 메뉴 */
+    #onuel_menu>div>div>a {
+        transform: scale(1.3);
+        margin: 15% 0;
+    }
+
+    .Luncheon,
+    .Dinner,
+    .Banquet,
+    .Signature {
+        top: 0;
+        width: 40%;
+    }
+
+    /* Room 소개 영역 */
+    .room_intro {
+        top: 55%;
+    }
+
+}
+
+
+@media (min-width: 1501px) and (max-width: 1830px) {
+
+    /* 헤더영역 */
+    header>nav {
+        width: 70%;
+    }
+
+    header>nav>ul>li>a {
+        font-size: 1.3rem;
+        margin-bottom: 63px;
+    }
+
+    .scroll_gnb {
+        margin-bottom: 12px;
+    }
+
+    /* 메인 슬라이드 */
+    .slide-caption h2 {
+        padding-top: 6%;
+    }
+
+    .slide-caption>p {
+        padding-top: 1%;
+    }
+
+    /* Reservation modal */
+    .reservation {
+        top: 17%;
+        right: 6%;
+    }
+
+    /* 서브메뉴 */
+    #gnb>ul>li:nth-child(2)>ul {
+        left: -85%;
+    }
+
+    #gnb>ul>li:nth-child(4)>ul {
+        left: -150%;
+    }
+
+    #gnb>ul>li ul>li {
+        font-size: 1.15rem;
+    }
+
+    /* 컨텐츠 영역 */
+
+    /* 오늘 밸류 */
+    #oneul_value>div:first-child {
+        padding: 0 2% 0 5%;
+    }
+
+    #oneul_value>div:first-child>p:nth-child(3) {
+        line-height: 1.8rem;
+    }
+
+    .value_img {
+        width: 50%;
+    }
+
+    /* 오늘 메뉴 */
+    #onuel_menu>div>div>a {
+        transform: scale(1.35);
+        margin: 15% 0;
+    }
+
+    .Luncheon,
+    .Dinner,
+    .Banquet,
+    .Signature {
+        top: 0;
+        width: 40%;
+        margin: 2% 3%;
+    }
+
+    /* 오늘 피플 */
+    #Chef1>div {
+        left: 11%;
+        top: -100px;
+    }
+
+    /* Room 소개 영역 */
+    .room_name {
+        text-align: center;
+    }
+
+    .room_intro {
+        top: 57%;
+        font-size: 1.1rem;
+        padding: 0 2%;
+    }
+
+    /* 인스타그램 영역 */
+    #insta {
+        padding: 150px 2%;
+    }
+}
+
+
+@media (min-width: 1281px) and (max-width: 1500px) {
+
+    /* 헤더영역 */
+    header>nav {
+        width: 70%;
+    }
+
+    header>nav>ul>li>a {
+        font-size: 1.3rem;
+        margin-bottom: 63px;
+    }
+
+    .scroll_gnb {
+        margin-bottom: 12px;
+    }
+
+    /* 서브메뉴 */
+    #gnb>ul>li:nth-child(2)>ul {
+        left: -85%;
+    }
+
+    #gnb>ul>li:nth-child(4)>ul {
+        left: -150%;
+    }
+
+    #gnb>ul>li ul>li {
+        font-size: 1.15rem;
+    }
+
+    /* 햄버거 메뉴 */
+    .icon_menu_gnb>nav {
+        width: 95%
+    }
+
+    .icon_menu_gnb>nav>ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .icon_menu>img {
+        right: 13%;
+    }
+
+    /* 메인 슬라이드 */
+    .slide-caption h2 {
+        padding-top: 7%;
+    }
+
+    .slide-caption>p {
+        padding-top: 1%;
+    }
+
+    .main_img_slide>div:first-child>div:nth-child(2)>img {
+        padding-top: 3%;
+    }
+
+    /* Reservation modal */
+    .reservation {
+        top: 17%;
+        right: 7%;
+    }
+
+    /* 컨텐츠 영역 */
+
+    /* 오늘 밸류 */
+    #oneul_value {
+        margin: 15% 1%;
+    }
+
+    #oneul_value>div:first-child {
+        padding: 0 5% 0 0;
+    }
+
+    .value_img {
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .value_img>img:first-child {
+        display: none;
+    }
+
+    .sa.notPC {
+        display: block;
+        position: relative;
+        bottom: 25%;
+    }
+
+    /* 오늘 메뉴 */
+    #onuel_menu {
+        width: 100%;
+    }
+
+    #onuel_menu>div>div>a {
+        transform: scale(1.25);
+        margin: 15% 0;
+    }
+
+    .Luncheon,
+    .Dinner,
+    .Banquet,
+    .Signature {
+        top: 0;
+        width: 40%;
+        margin: 0 2%;
+    }
+
+    /* 오늘 피플 */
+    #Chef1>div {
+        left: 11%;
+        top: -100px;
+    }
+
+    #Chef2 {
+        overflow: hidden;
+    }
+
+    #Chef2>div {
+        right: -230px;
+        top: -200px
+    }
+
+    /* Room 소개 영역 */
+    .room_floor {
+        top: 42%;
+    }
+
+    .room_name {
+        text-align: center;
+    }
+
+    .room_intro {
+        top: 55%;
+        padding: 0 2%;
+    }
+
+    .room_floor_on {
+        top: 28%;
+    }
+
+    .room_name_on {
+        top: 37%;
+        font-size: 2.5rem;
+    }
+
+    /* 인스타그램 영역 */
+    #insta {
+        padding: 150px 2%;
+    }
+
+    /* 푸터 영역 */
+    footer {
+        height: 330px;
+    }
+
+    footer>img:first-child {
+        top: 18%;
+        left: 3%;
+    }
+
+    .footer_text {
+        top: 43%;
+        left: 3%;
+
+    }
+}
+
+/*
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+##Device = 랩탑, 데스크탑
+##Screen = 1025px에서 1280px 사이
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    /* 헤더영역 */
+    header {
+        top: 0%;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 100px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    header>h1 {
+        top: 20px;
+    }
+
+    header>h1>a>img {
+        width: 70%;
+    }
+
+    .icon_menu {
+        height: 100px;
+    }
+
+    header>nav {
+        display: none;
+    }
+
+    .header_notPC {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* 햄버거 메뉴 */
+    .icon_menu>img {
+        width: 17%;
+        right: 13%;
+    }
+
+    /* 메인 슬라이드 */
+    .slide-caption h2 {
+        padding-top: 10%;
+    }
+
+    .main_img_slide>div:first-child>div:nth-child(2)>img {
+        padding-top: 2.5%;
+    }
+
+    .main_img_slide>div:first-child>div:nth-child(2)>h2 {
+        padding-top: 3%;
+    }
+
+    /* Reservation modal */
+    .reservation {
+        top: 15%;
+        right: 8%;
+    }
+
+    /* 햄버거 메뉴 */
+    .icon_menu_gnb>nav {
+        width: 95%
+    }
+
+    .icon_menu_gnb>nav>ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .icon_menu_gnb>nav>ul>li {
+        margin: 0 4%;
+    }
+
+    .icon_menu_gnb>nav>ul>li>a {
+        font-size: 1.5rem;
+    }
+
+    .icon_menu_gnb>nav>ul>li:nth-child(2)>.icon_menu_subgnb {
+        left: -188%;
+    }
+
+    .icon_menu_gnb>nav>ul>li:nth-child(4)>.icon_menu_subgnb {
+        left: -183%
+    }
+
+    /* 컨텐츠 영역 */
+
+    .mini_title {
+        font-size: 1.1rem;
+    }
+
+    .main_title {
+        font-size: 2.8rem;
+        padding-top: 4%;
+    }
+
+    /* 오늘 밸류 */
+    #oneul_value {
+        margin: 15% 0;
+    }
+
+    #oneul_value>div:first-child {
+        padding: 0;
+    }
+
+    #oneul_value>div:first-child>p:nth-child(3) {
+        font-size: 1rem;
+    }
+
+    .value_img {
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .value_img>img:first-child {
+        display: none;
+    }
+
+    .sa.notPC {
+        display: block;
+        position: relative;
+        bottom: 10%;
+    }
+
+    /* 오늘 메뉴 */
+    #onuel_people>.mini_title {
+        display: block;
+        position: unset;
+        text-align: center;
+    }
+
+    #onuel_people>.main_title {
+        display: block;
+        position: unset;
+        text-align: center;
+        padding: 2% 0 4%;
+    }
+
+    #onuel_menu {
+        width: 100%;
+    }
+
+    #onuel_menu>div>div>a {
+        transform: scale(1.1);
+        margin: 10% 0;
+    }
+
+    .Luncheon,
+    .Dinner,
+    .Banquet,
+    .Signature {
+        top: 0;
+        width: 40%;
+        margin: 0 3%;
+    }
+
+    /* 오늘 피플 */
+    #Chef1>div {
+        top: -130px;
+        left: 330px;
+    }
+
+    #Chef2 {
+        top: 0;
+        left: 0;
+        position: relative;
+        width: auto;
+        text-align: left;
+    }
+
+    #Chef2>div {
+        top: -130px;
+        left: 330px;
+        padding: 70px 0 0 50px;
+    }
+
+    #Chef2 .main_career {
+        right: 0;
+    }
+
+    #Chef2 .main_career>li {
+        left: 20px;
+    }
+
+    #Chef2 .main_career>li>p {
+        left: 0;
+    }
+
+    /* Room 소개 영역 */
+    .intro_room {
+        width: 100%;
+    }
+
+    .room_intro {
+        padding: 0 5%;
+    }
+
+    .room_floor {
+        top: 40%;
+    }
+
+    .room_name {
+        text-align: center;
+    }
+
+    .room_floor_on {
+        top: 20%;
+    }
+
+    .room_name_on {
+        top: 30%;
+        font-size: 2.8rem;
+    }
+
+    /* 인스타그램 영역 */
+    #insta {
+        padding: 150px 2%;
+    }
+
+    /* 푸터 영역 */
+    footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        height: 580px;
+    }
+
+    footer>img:first-child {
+        position: unset;
+        width: 25%;
+    }
+
+    .footer_text {
+        position: unset;
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 2rem;
+        margin: 3% 0 8%;
+    }
+
+    .footer_icons {
+        position: relative;
+        top: 0;
+        right: 0;
+        justify-content: unset;
+    }
+
+    .footer_icons>a {
+        width: 50px;
+        padding-top: 2%;
+    }
+
+    .footer_icons>a>img {
+        width: 100%;
+    }
+
+    .footer_icons>div:nth-child(2) {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .footer_icons>div:nth-child(2)>a {
+        position: unset;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .family_site {
+        position: absolute;
+        right: -25%;
+        top: 7%;
+        width: 300px;
+        height: 70px;
+    }
+
+    .family_site_on {
+        height: 140px;
+    }
+
+    .family_site>p:first-child {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .family_site>p>img {
+        top: 45%;
+        right: 12%;
+    }
+
+    .family_site>p:last-child {
+        height: 70px;
+    }
+
+    .family_site>p:last-child>a {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        padding: 0 20px;
+    }
+}
+
+/*
+##Device = Tablets, Ipads (portrait),
+##Screen = B/w 768px to 1024px
+##Device = 태블릿, 아이패드(세로),
+##Screen = 768px에서 1024px 사이
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* 헤더영역 */
+    header {
+        top: 0%;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 85px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    header>h1 {
+        top: 20px;
+    }
+
+    header>h1>a>img {
+        width: 60%;
+        padding-bottom: 4%;
+    }
+
+    .icon_menu {
+        height: 100px;
+    }
+
+    header>nav {
+        display: none;
+    }
+
+    .header_notPC {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* 햄버거 메뉴 */
+    .icon_menu>img {
+        width: 14%;
+        right: 11%;
+        top: 28%;
+    }
+
+    .icon_menu_gnb {
+        display: block;
+        background-color: white;
+        z-index: 99;
+        top: 0;
+        opacity: 1;
+        transform: translateX(100%);
+        transition: all .5s;
+    }
+
+    .icon_menu_gnb.icon_menu_on {
+        top: 0;
+        opacity: 1;
+        transition: all .5s;
+        display: block;
+        right: 0;
+        transform: translateX(0%);
+    }
+
+    .icon_menu_gnb>h2 {
+        margin: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .icon_menu_gnb>h2>a {
+        padding: 2.5%;
+        display: inline-block;
+    }
+
+    .icon_menu_gnb>h2>a>img {
+        width: 60%;
+    }
+
+    .icon_menu_gnb>img {
+        top: 2.5%;
+        right: 2%;
+    }
+
+    .icon_menu_gnb>nav {
+        width: unset;
+        height: auto;
+        margin: 0;
+    }
+
+    .icon_menu_gnb>nav>ul>li {
+        float: unset;
+        margin: 0 5%;
+        padding: 2% 3%;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .icon_menu_gnb>nav>ul>li>a {
+        color: black;
+    }
+
+    .icon_menu_subgnb {
+        position: relative;
+    }
+
+    .icon_menu_gnb>nav>ul>li:nth-child(2)>.icon_menu_subgnb,
+    .icon_menu_gnb>nav>ul>li:nth-child(4)>.icon_menu_subgnb {
+        display: none;
+        left: 0;
+    }
+
+    .icon_menu_gnb>nav>ul>li>a::after {
+        all: unset;
+    }
+
+    .icon_menu_subgnb>li>a {
+        color: black;
+    }
+
+    .icon_menu_gnb>div:last-child {
+        display: none;
+    }
+
+    /* 메인 슬라이드 */
+    .main_img_slide {
+        height: 900px;
+    }
+
+    .main_img_slide>div:first-child>div:nth-child(2)>img {
+        padding-top: 10%;
+    }
+
+    .slide-caption h2 {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        padding: 10% 0 2%;
+        line-height: unset;
+    }
+
+    .slide-caption>a {
+        padding-top: 3%;
+    }
+
+    .notPC {
+        display: block;
+    }
+
+    .prev>img,
+    .next>img {
+        display: none;
+    }
+
+    .dot-container {
+        bottom: 15%;
+    }
+
+    .main_img_slide>div:first-child>div:nth-child(2)>h2 {
+        padding-top: 3%;
+    }
+
+    .slide-caption>p {
+        padding-top: 10px;
+    }
+
+    /* Reservation modal */
+    .reservation {
+        width: 200px;
+        height: 60px;
+        top: 12%;
+        right: 7%;
+        font-size: 1.1rem;
+    }
+
+    /* 컨텐츠 영역 */
+    .mini_title {
+        display: block;
+        text-align: center;
+        font-weight: lighter;
+    }
+
+    .main_title {
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        font-size: 2rem;
+        margin-top: 3%;
+    }
+
+
+    /* 오늘 밸류 */
+    #oneul_value {
+        flex-direction: column;
+        margin: 10% 0;
+    }
+
+    #oneul_value>div:first-child {
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    .not_mobile {
+        display: none;
+    }
+
+    #oneul_value>div:first-child>p:nth-child(3) {
+        text-align: center;
+
+    }
+
+    .value_img>img:first-child {
+        display: none;
+    }
+
+    .value_img {
+        width: 98%;
+        height: 350px;
+        overflow: hidden;
+    }
+
+    .sa.notPC {
+        display: block;
+        position: relative;
+        bottom: 70%;
+    }
+
+    /* 오늘 메뉴 */
+    #onuel_people>.mini_title {
+        display: block;
+        position: unset;
+        text-align: center;
+    }
+
+    #onuel_people>.main_title {
+        display: block;
+        position: unset;
+        text-align: center;
+        padding: 2% 0 4%;
+    }
+
+    #onuel_menu {
+        width: 100%;
+    }
+
+    #onuel_menu>div {
+        padding: unset;
+        padding-top: 5%;
+    }
+
+    #onuel_menu>div>div>a {
+        transform: unset;
+        margin: 2% 0;
+    }
+
+    .Luncheon,
+    .Dinner,
+    .Banquet,
+    .Signature {
+        top: 0;
+        margin: 0;
+    }
+
+    /* 오늘 피플 */
+    #onuel_people {
+        height: 1550px;
+    }
+
+    #onuel_people>div>div>ul {
+        line-height: 1.7rem;
+    }
+
+    #Chef1>img {
+        width: 50%;
+    }
+
+    #Chef1>div,
+    #Chef2>div {
+        top: -200px;
+        left: 250px;
+        padding: 70px 0 0 50px;
+    }
+
+    #Chef2 {
+        top: 0;
+        left: 0;
+        position: relative;
+        width: auto;
+        text-align: left;
+    }
+
+    #Chef2>img {
+        width: 80%;
+    }
+
+    #Chef2 .main_career {
+        right: 0;
+    }
+
+    #Chef2 .main_career>li {
+        left: 20px;
+    }
+
+    #Chef2 .main_career>li>p {
+        left: 0;
+    }
+
+    /* Room 소개 영역 */
+    .intro_room {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .intro_room>div {
+        margin: 1% 0;
+    }
+
+    #intro_room .on {
+        width: 100%
+    }
+
+    .room_floor {
+        top: 45%;
+        font-size: 1.3rem;
+        font-weight: lighter;
+    }
+
+    .room_name {
+        top: 50%;
+        font-size: 1.7rem;
+    }
+
+    .intro_room>div>p:nth-child(5) {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .intro_room>div>img:nth-child(1) {
+        display: none;
+    }
+
+    .intro_room>div>img:nth-child(2) {
+        display: block;
+    }
+
+    /* 인스타그램 영역 */
+    #insta {
+        margin-top: 120px;
+        padding: 15% 2%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5% 1%;
+    }
+
+    #insta>div:first-child {
+        grid-column: 1 / 3;
+    }
+
+    #insta>div:first-child>a {
+        font-size: 1.5rem;
+        margin: 3% 0 15%;
+    }
+
+    #insta>div:last-child {
+        display: none;
+    }
+
+    /* 하단 맵 영역 */
+    #map {
+        height: 500px;
+    }
+
+    #place_guide {
+        flex-direction: column;
+        position: unset;
+    }
+
+    #place_guide>div:first-child {
+        width: 700px;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    #place_guide>div:first-child>img:last-child {
+        width: 100%;
+        height: unset;
+        position: relative;
+        bottom: 170%;
+    }
+
+    #place_guide>div:first-child>p {
+        z-index: 1;
+    }
+
+    #place_guide>div:first-child>img:nth-child(2) {
+        z-index: 1;
+        width: 5%;
+        left: 41px;
+    }
+
+    #place_guide>div:last-child {
+        width: 700px;
+        height: 430px;
+        padding: 5%;
+    }
+
+    .location>p:nth-child(2) {
+        padding: 5px 0;
+    }
+
+    .contact_number>div:nth-child(2) {
+        padding: 20px 10px;
+    }
+
+    .contact_number>div:nth-child(3) {
+        padding: 20px 0;
+    }
+
+    .business_hours {
+        padding: 15px 0;
+    }
+
+    .business_hours>p:nth-child(4) {
+        width: unset;
+        margin-left: 15px;
+    }
+
+    .business_hours>img {
+        padding: 15px 15px 5px 0;
+    }
+
+    /* 푸터 영역 */
+    footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+    }
+
+    footer>img:first-child {
+        position: unset;
+        width: 22%;
+    }
+
+    .footer_text {
+        position: unset;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 2% 0 5%;
+    }
+
+    .footer_icons {
+        position: relative;
+        top: 0;
+        right: 0;
+        justify-content: unset;
+        transform: scale(0.75);
+    }
+
+    .footer_icons>a {
+        width: 50px;
+        padding-top: 2%;
+    }
+
+    .footer_icons>a>img {
+        width: 100%;
+    }
+
+    .footer_icons>div:nth-child(2) {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .footer_icons>div:nth-child(2)>a {
+        position: unset;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .family_site {
+        position: absolute;
+        right: -25%;
+        top: 7%;
+        width: 300px;
+        height: 70px;
+    }
+
+    .family_site_on {
+        height: 140px;
+    }
+
+    .family_site>p:first-child {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .family_site>p>img {
+        top: 45%;
+        right: 12%;
+    }
+
+    .family_site>p:last-child {
+        height: 70px;
+    }
+
+    .family_site>p:last-child>a {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        padding: 0 20px;
+    }
+}
+
+/*
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+##Device = 저해상도 태블릿, 모바일(가로)
+##Screen = 481px에서 767px 사이
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    /* 헤더영역 */
+    header {
+        top: 0%;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 70px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    header>h1 {
+        top: 14px;
+    }
+
+    header>h1>a>img {
+        width: 50%;
+        padding-bottom: 4%;
+    }
+
+    .icon_menu {
+        height: 100px;
+    }
+
+    header>nav {
+        display: none;
+    }
+
+    .header_notPC {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* 햄버거 메뉴 */
+    .icon_menu>img {
+        width: 10%;
+        right: 11%;
+        top: 25%;
+    }
+
+    .icon_menu_gnb {
+        display: block;
+        background-color: white;
+        z-index: 99;
+        top: 0;
+        opacity: 1;
+        transform: translateX(100%);
+        transition: all .5s;
+    }
+
+    .icon_menu_gnb.icon_menu_on {
+        top: 0;
+        opacity: 1;
+        transition: all .5s;
+        display: block;
+        right: 0;
+        transform: translateX(0%);
+    }
+
+    .icon_menu_gnb>h2 {
+        margin: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .icon_menu_gnb>h2>a {
+        padding: 2.5%;
+        display: inline-block;
+    }
+
+    .icon_menu_gnb>h2>a>img {
+        width: 60%;
+    }
+
+    .icon_menu_gnb>img {
+        top: 2.5%;
+        right: 5%;
+        width: 5%;
+    }
+
+    .icon_menu_gnb>nav {
+        width: unset;
+        height: auto;
+        margin: 0;
+    }
+
+    .icon_menu_gnb>nav>ul>li {
+        float: unset;
+        margin: 0 5%;
+        padding: 2% 3%;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .icon_menu_gnb>nav>ul>li>a {
+        color: black;
+        font-size: 1.5rem;
+    }
+
+    .icon_menu_subgnb {
+        position: relative;
+    }
+
+    .icon_menu_gnb>nav>ul>li:nth-child(2)>.icon_menu_subgnb,
+    .icon_menu_gnb>nav>ul>li:nth-child(4)>.icon_menu_subgnb {
+        display: none;
+        left: 0;
+    }
+
+    .icon_menu_gnb>nav>ul>li>a::after {
+        all: unset;
+    }
+
+    .icon_menu_subgnb>li>a {
+        color: black;
+    }
+
+    .icon_menu_gnb>div:last-child {
+        display: none;
+    }
+
+
+    /* 메인 슬라이드 */
+    .main_img_slide {
+        height: 710px;
+    }
+
+    .main_img_slide>div:first-child>div:nth-child(2)>img {
+        padding-top: 10%;
+        width: 35%;
+    }
+
+    .slide-caption {
+        transform: scale(0.8);
+    }
+
+    .slide-caption h2 {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        padding: 10% 0 2%;
+        line-height: unset;
+    }
+
+    .slide-caption>a {
+        padding-top: 3%;
+        transform: scale(0.8);
+    }
+
+    .notPC {
+        display: block;
+    }
+
+    .prev>img,
+    .next>img {
+        display: none;
+    }
+
+    .dot-container {
+        bottom: 20%;
+        transform: scale(0.7);
+    }
+
+    .main_img_slide>div:first-child>div:nth-child(2)>h2 {
+        padding-top: 3%;
+    }
+
+    .slide-caption>p {
+        padding-top: 10px;
+    }
+
+    /* Reservation modal */
+    .reservation {
+        width: 170px;
+        height: 45px;
+        top: 15%;
+        right: 7%;
+        font-size: 1.1rem;
+    }
+
+    /* 컨텐츠 영역 */
+    /* .sa-left {
+        transform: translate(20px, 0);
+    } */
+
+    .mini_title {
+        display: block;
+        text-align: center;
+        font-weight: lighter;
+    }
+
+    .main_title {
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        font-size: 2rem;
+        margin-top: 3%;
+    }
+
+
+    /* 오늘 밸류 */
+    #oneul_value {
+        flex-direction: column;
+        margin: 10% 0;
+    }
+
+    #oneul_value>div:first-child {
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    .not_mobile {
+        display: none;
+    }
+
+    #oneul_value>div:first-child>p:nth-child(3) {
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 30px 0 15px;
+        word-break: keep-all;
+    }
+
+    #oneul_value>div:first-child>p:last-child {
+        text-align: center;
+        font-size: 0.9rem;
+        padding-bottom: 30px;
+        line-height: 1.3rem;
+        word-break: keep-all;
+    }
+
+    .value_img>img:first-child {
+        display: none;
+    }
+
+    .value_img {
+        width: 98%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .sa.notPC {
+        display: block;
+        position: relative;
+        bottom: 40%;
+    }
+
+    /* 오늘 메뉴 */
+    #onuel_people>.mini_title {
+        display: block;
+        position: unset;
+        text-align: center;
+    }
+
+    #onuel_people>.main_title {
+        display: block;
+        position: unset;
+        text-align: center;
+        padding: 2% 0 4%;
+    }
+
+    #onuel_menu {
+        width: 100%;
+    }
+
+    #onuel_menu>div {
+        padding: unset;
+        padding-top: 5%;
+    }
+
+    #onuel_menu>div>div>a {
+        transform: unset;
+        margin: 2% 0;
+    }
+
+    .Luncheon,
+    .Dinner,
+    .Banquet,
+    .Signature {
+        top: 0;
+        margin: 0;
+    }
+
+    /* 오늘 피플 */
+    #onuel_people {
+        height: 1550px;
+    }
+
+    #onuel_people>div>div>ul {
+        line-height: 1.7rem;
+        font-size: 0.9rem;
+    }
+
+    #Chef1 {
+        width: auto;
+    }
+
+    #Chef1>img {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    #Chef1>div,
+    #Chef2>div {
+        position: unset;
+        padding: 40px 0 0 20px;
+    }
+
+    .mini_career {
+        font-size: 1.2rem;
+    }
+
+    .people_name_kor {
+        font-size: 1.5rem;
+        padding: 1% 0;
+    }
+
+    .people_name_en {
+        font-size: 1.2rem;
+    }
+
+    #Chef2 {
+        top: 0;
+        left: 0;
+        position: relative;
+        width: auto;
+        text-align: left;
+    }
+
+    #Chef2>img {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    #Chef2 .main_career {
+        right: 0;
+    }
+
+    #Chef2 .main_career>li {
+        left: 20px;
+    }
+
+    #Chef2 .main_career>li>p {
+        left: 0;
+    }
+
+    /* Room 소개 영역 */
+    .intro_room {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .intro_room>div {
+        margin: 1% 0;
+    }
+
+    #intro_room .on {
+        width: 100%
+    }
+
+    .room_floor {
+        top: 45%;
+        font-size: 1.3rem;
+        font-weight: lighter;
+    }
+
+    .room_name {
+        top: 50%;
+        font-size: 1.7rem;
+    }
+
+    .intro_room>div>p:nth-child(5) {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .intro_room>div>img:nth-child(1) {
+        display: none;
+    }
+
+    .intro_room>div>img:nth-child(2) {
+        display: block;
+        width: 100%;
+    }
+
+    /* 인스타그램 영역 */
+    #insta {
+        margin-top: 120px;
+        padding: 15% 2%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5% 1%;
+    }
+
+    #insta>div:first-child {
+        grid-column: 1 / 3;
+    }
+
+    #insta>div:first-child>a {
+        font-size: 1.5rem;
+        margin: 3% 0 15%;
+    }
+
+    #insta>div:last-child {
+        display: none;
+    }
+
+    /* 하단 맵 영역 */
+    #map {
+        height: 400px;
+    }
+
+    #place_guide {
+        flex-direction: column;
+        position: unset;
+    }
+
+    #place_guide>div:first-child {
+        width: 95%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    #place_guide>div:first-child>img:last-child {
+        width: 100%;
+        height: unset;
+        position: relative;
+        bottom: 90%;
+    }
+
+    #place_guide>div:first-child>p {
+        z-index: 1;
+    }
+
+    #place_guide>div:first-child>img:nth-child(2) {
+        z-index: 1;
+        width: 5%;
+        left: 41px;
+    }
+
+    #place_guide>div:last-child {
+        width: 95%;
+        height: 430px;
+        padding: 5%;
+    }
+
+    .location>p:first-child {
+        font-size: 0.9rem;
+    }
+
+    .location>p:nth-child(2) {
+        padding: 5px 0;
+        font-size: 1.5rem;
+    }
+
+    .location>p:nth-child(4),
+    .location>p:nth-child(5) {
+        font-size: 0.85rem;
+    }
+
+    .location>p:nth-child(5) {
+        padding-bottom: 15px;
+    }
+
+    .contact_number>img:first-child {
+        width: 23px;
+    }
+
+    .contact_number>div:nth-child(2)>p:first-child,
+    .contact_number>div:nth-child(3)>p:first-child {
+        font-size: 1rem;
+    }
+
+    .contact_number>div:nth-child(2)>p:last-child,
+    .contact_number>div:nth-child(3)>p:last-child {
+        font-size: 0.95rem;
+    }
+
+    .contact_number>div:nth-child(2),
+    .contact_number>div:nth-child(3) {
+        padding: 13px 5px;
+    }
+
+    .business_hours {
+        padding: 15px 0;
+    }
+
+    .business_hours>p:nth-child(4) {
+        width: 80%;
+        margin-left: 0;
+    }
+
+    .business_hours>img {
+        width: 23px;
+        padding: 0;
+        margin: 30px 20px 30px 0;
+    }
+
+    .business_hours>p {
+        font-size: 0.95rem;
+    }
+
+    .business_hours>p>span {
+        font-size: 1rem;
+    }
+
+    /* 푸터 영역 */
+    footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        height: 370px;
+    }
+
+    footer>img:first-child {
+        position: unset;
+        width: 25%;
+    }
+
+    .footer_text {
+        position: unset;
+        text-align: center;
+        font-size: 0.8rem;
+        line-height: unset;
+        margin: 2% 0 5%;
+        padding: 0 5%;
+    }
+
+    .footer_icons {
+        position: relative;
+        top: 0;
+        right: 0;
+        justify-content: unset;
+        transform: scale(0.75);
+        width: 350px;
+    }
+
+    .footer_icons>a {
+        width: 50px;
+        padding-top: 2%;
+    }
+
+    .footer_icons>a>img {
+        width: 100%;
+    }
+
+    .footer_icons>div:nth-child(2) {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        top: 20%;
+        margin: 0 5%;
+    }
+
+    .footer_icons>div:nth-child(2)>a {
+        position: unset;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .family_site {
+        position: absolute;
+        right: 0;
+        top: 20%;
+        width: 200px;
+        height: 50px;
+    }
+
+    .family_site_on {
+        height: 100px;
+    }
+
+    .family_site>p:first-child {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .family_site>p>img {
+        top: 45%;
+        right: 12%;
+    }
+
+    .family_site>p:last-child {
+        height: 50px;
+    }
+
+    .family_site>p:last-child>a {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding: 0 20px;
+    }
+}
+
+/*
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+##Device = 대부분의 스마트폰 모바일 기기(세로)
+##Screen = 320px에서 479px 사이
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    /* 헤더영역 */
+    header {
+        top: 0%;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 70px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    header>h1 {
+        top: 14px;
+    }
+
+    header>h1>a>img {
+        width: 45%;
+        padding-bottom: 6%;
+    }
+
+    .icon_menu {
+        height: 100px;
+    }
+
+    header>nav {
+        display: none;
+    }
+
+    .header_notPC {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* 햄버거 메뉴 */
+    .icon_menu>img {
+        width: 10%;
+        right: 11%;
+        top: 25%;
+    }
+
+    .icon_menu_gnb {
+        display: block;
+        background-color: white;
+        z-index: 99;
+        top: 0;
+        opacity: 1;
+        transform: translateX(100%);
+        transition: all .5s;
+    }
+
+    .icon_menu_gnb.icon_menu_on {
+        top: 0;
+        opacity: 1;
+        transition: all .5s;
+        display: block;
+        right: 0;
+        transform: translateX(0%);
+    }
+
+    .icon_menu_gnb>h2 {
+        margin: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .icon_menu_gnb>h2>a {
+        padding: 2.5%;
+        display: inline-block;
+    }
+
+    .icon_menu_gnb>h2>a>img {
+        width: 40%;
+    }
+
+    .icon_menu_gnb>img {
+        top: 2.5%;
+        right: 5%;
+        width: 5%;
+    }
+
+    .icon_menu_gnb>nav {
+        width: unset;
+        height: auto;
+        margin: 0;
+    }
+
+    .icon_menu_gnb>nav>ul>li {
+        float: unset;
+        margin: 0 5%;
+        padding: 2% 3%;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .icon_menu_gnb>nav>ul>li>a {
+        color: black;
+        font-size: 1.4rem;
+    }
+
+    .icon_menu_subgnb {
+        position: relative;
+    }
+
+    .icon_menu_gnb>nav>ul>li:nth-child(2)>.icon_menu_subgnb,
+    .icon_menu_gnb>nav>ul>li:nth-child(4)>.icon_menu_subgnb {
+        display: none;
+        left: 0;
+    }
+
+    .icon_menu_gnb>nav>ul>li>a::after {
+        all: unset;
+    }
+
+    .icon_menu_subgnb>li>a {
+        color: black;
+    }
+
+    .icon_menu_gnb>div:last-child {
+        display: none;
+    }
+
+    /* 메인 슬라이드 */
+    .main_img_slide {
+        height: 710px;
+    }
+
+    .main_img_slide>div:first-child>div:nth-child(2)>img {
+        padding-top: 20%;
+        width: 35%;
+    }
+
+    .slide-caption {
+        transform: scale(0.8);
+    }
+
+    .slide-caption h2 {
+        font-size: 3rem;
+        line-height: 3rem;
+        padding: 25% 0 2%;
+    }
+
+    .slide-caption>a {
+        padding-top: 3%;
+        transform: scale(0.7);
+    }
+
+    .slide-caption>p {
+        font-size: 0.9rem;
+    }
+
+    .slide-caption>p:nth-child(3) {
+        font-size: 0.9rem;
+    }
+
+    .notPC {
+        display: block;
+    }
+
+    .prev>img,
+    .next>img {
+        display: none;
+    }
+
+    .dot-container {
+        bottom: 20%;
+        transform: scale(0.7);
+    }
+
+    .main_img_slide>div:first-child>div:nth-child(2)>h2 {
+        padding-top: 5%;
+        font-size: 0.9rem;
+        word-break: keep-all;
+        line-height: unset;
+    }
+
+    .slide-caption>p {
+        padding-top: 10px;
+    }
+
+    /* Reservation modal */
+    .reservation {
+        width: 130px;
+        height: 35px;
+        top: 13%;
+        right: 7%;
+        font-size: 0.8rem;
+    }
+
+    .reservation>img {
+        width: 12%;
+    }
+
+    .modal_content {
+        transform: scale(0.7);
+    }
+
+    /* 컨텐츠 영역 */
+    /* .sa-left {
+        transform: translate(20px, 0);
+    } */
+
+    .mini_title {
+        display: block;
+        text-align: center;
+        font-weight: lighter;
+        font-size: 0.8rem;
+    }
+
+    .main_title {
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-top: 3%;
+    }
+
+
+    /* 오늘 밸류 */
+    #oneul_value {
+        flex-direction: column;
+        margin: 10% 0;
+    }
+
+    #oneul_value>div:first-child {
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    .not_mobile {
+        display: none;
+    }
+
+    #oneul_value>div:first-child>p:nth-child(3) {
+        text-align: center;
+        font-size: 0.7rem;
+        padding: 30px 0 15px;
+        word-break: keep-all;
+        line-height: 1.2rem;
+    }
+
+    #oneul_value>div:first-child>p:last-child {
+        text-align: center;
+        font-size: 0.7rem;
+        padding-bottom: 30px;
+        line-height: 1.1rem;
+        word-break: keep-all;
+    }
+
+    .value_img>img:first-child {
+        display: none;
+    }
+
+    .value_img {
+        width: 98%;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .sa.notPC {
+        display: block;
+        position: relative;
+        bottom: 20%;
+    }
+
+    /* 오늘 메뉴 */
+    #onuel_people>.mini_title {
+        display: block;
+        position: unset;
+        text-align: center;
+    }
+
+    #onuel_people>.main_title {
+        display: block;
+        position: unset;
+        text-align: center;
+        padding: 2% 0 4%;
+    }
+
+    #onuel_menu>div>div>a>img {
+        width: 100%;
+    }
+
+    #onuel_menu>div>div>a>p {
+        font-size: 1rem;
+    }
+
+    #onuel_menu>div>div>a>p:nth-child(2) {
+        transform: scale(0.75);
+        transform-origin: left top;
+        left: 15px;
+        top: 15px
+    }
+
+    #onuel_menu>div>div>a>img:nth-child(3) {
+        width: unset;
+        left: 81%;
+    }
+
+    .mini_border {
+        transform: scale(0.75);
+        transform-origin: left top;
+        top: 80%;
+    }
+
+    #onuel_menu>div>div>a>p:nth-child(5) {
+        top: 83%;
+    }
+
+    #onuel_menu>div>div>a>p:nth-child(6) {
+        top: 83%;
+        left: 45%;
+    }
+
+    #onuel_menu .Dinner>a>p:last-child {
+        width: 170px;
+        left: 45%;
+    }
+
+    .Signature>a>p:last-child {
+        width: unset;
+    }
+
+    #onuel_people>.main_title {
+        display: block;
+        position: unset;
+        text-align: center;
+        padding: 2% 0 4%;
+    }
+
+    #onuel_menu {
+        width: 100%;
+    }
+
+    #onuel_menu>div {
+        padding: unset;
+        padding-top: 5%;
+    }
+
+    #onuel_menu>div>div>a {
+        transform: unset;
+        margin: 2% 0;
+    }
+
+    .Luncheon,
+    .Dinner,
+    .Banquet,
+    .Signature {
+        top: 0;
+        margin: 0;
+    }
+
+    /* 오늘 피플 */
+    #onuel_people {
+        height: 1250px;
+        width: 100%;
+    }
+
+    #onuel_people>div>div>ul {
+        line-height: 1.3rem;
+        font-size: 0.8rem;
+    }
+
+    #Chef1 {
+        width: 100%;
+    }
+
+    #Chef1>img {
+        width: 100%;
+        height: 270px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    #Chef1>div,
+    #Chef2>div {
+        position: unset;
+        padding: 40px 0 0 20px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .mini_career {
+        font-size: 1rem;
+    }
+
+    .people_name_kor {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+
+    .people_name_en {
+        font-size: 1rem;
+    }
+
+    #Chef2 {
+        top: 0;
+        left: 0;
+        position: relative;
+        width: auto;
+        text-align: left;
+        width: 100%;
+    }
+
+    #Chef2>img {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    #Chef2 .main_career {
+        right: 0;
+    }
+
+    #Chef2 .main_career>li {
+        left: 20px;
+    }
+
+    #Chef2 .main_career>li>p {
+        left: 0;
+    }
+
+    /* Room 소개 영역 */
+    .intro_room {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .intro_room>div {
+        margin: 1% 0;
+    }
+
+    #intro_room .on {
+        width: 100%
+    }
+
+    .room_floor {
+        top: 38%;
+        font-size: 1.1rem;
+        font-weight: lighter;
+    }
+
+    .room_name {
+        top: 50%;
+        font-size: 1.7rem;
+    }
+
+    .intro_room>div>p:nth-child(5) {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .intro_room>div>img:nth-child(1) {
+        display: none;
+    }
+
+    .intro_room>div>img:nth-child(2) {
+        display: block;
+        width: 100%;
+    }
+
+    /* 인스타그램 영역 */
+    #insta {
+        margin-top: 120px;
+        padding: 15% 2%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5% 1%;
+    }
+
+    #insta>div:first-child img {
+        width: 30%;
+    }
+
+    #insta>div:first-child {
+        grid-column: 1 / 3;
+    }
+
+    #insta>div:first-child>a {
+        font-size: 1rem;
+        margin: 3% 0 15%;
+    }
+
+    #insta>div:last-child {
+        display: none;
+    }
+
+    /* 하단 맵 영역 */
+    #map {
+        height: 300px;
+    }
+
+    #place_guide {
+        flex-direction: column;
+        position: unset;
+    }
+
+    #place_guide>div:first-child {
+        width: 95%;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    #place_guide>div:first-child>img:last-child {
+        width: 100%;
+        height: unset;
+        position: relative;
+        bottom: 82%;
+    }
+
+    #place_guide>div:first-child>p {
+        z-index: 1;
+        width: 80px;
+        height: 80px;
+        line-height: 6.5rem;
+        font-size: 0.85rem;
+    }
+
+    #place_guide>div:first-child>img:nth-child(2) {
+        z-index: 1;
+        width: 5%;
+        top: 25px;
+        left: 32px;
+    }
+
+    #place_guide>div:last-child {
+        width: 95%;
+        height: 350px;
+        padding: 5%;
+    }
+
+    .location>p:first-child {
+        font-size: 0.7rem;
+    }
+
+    .location>address {
+        font-size: 0.7rem;
+    }
+
+    .location>p:nth-child(2) {
+        padding: 5px 0;
+        font-size: 1.2rem;
+    }
+
+    .location>p:nth-child(4),
+    .location>p:nth-child(5) {
+        font-size: 0.6rem;
+    }
+
+    .location>p:nth-child(5) {
+        padding-bottom: 15px;
+    }
+
+    .contact_number>img:first-child {
+        width: 18px;
+        bottom: -9px;
+    }
+
+    .contact_number>div:nth-child(2)>p:first-child,
+    .contact_number>div:nth-child(3)>p:first-child {
+        font-size: 0.8rem;
+    }
+
+    .contact_number>div:nth-child(2)>p:last-child,
+    .contact_number>div:nth-child(3)>p:last-child {
+        font-size: 0.8rem;
+    }
+
+    .contact_number>div:nth-child(2) {
+        padding: 5% 0 0 0;
+    }
+
+    .contact_number>div:nth-child(3) {
+        padding: 0 0 5% 0;
+        position: relative;
+        left: 12%;
+    }
+
+    .business_hours {
+        padding: 10px 0;
+    }
+
+    .business_hours>p:nth-child(4) {
+        width: auto;
+        margin-left: 5px;
+    }
+
+    .business_hours>img {
+        width: 18px;
+        padding: 0;
+        margin: 30px 15px 30px 0;
+    }
+
+    .business_hours>p {
+        font-size: 0.8rem;
+    }
+
+    .business_hours>p>span {
+        font-size: 0.8rem;
+    }
+
+    /* 푸터 영역 */
+    footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+    }
+
+    footer>img:first-child {
+        position: unset;
+        width: 40%;
+    }
+
+    .footer_text {
+        position: unset;
+        text-align: center;
+        font-size: 0.75rem;
+        line-height: unset;
+        margin: 2% 0 5%;
+        padding: 0 5%;
+    }
+
+    .footer_icons {
+        position: relative;
+        top: 0;
+        right: 0;
+        justify-content: unset;
+        transform: scale(0.75);
+        width: 350px;
+        word-break: keep-all;
+    }
+
+    .footer_icons>a {
+        width: 50px;
+        padding-top: 2%;
+    }
+
+    .footer_icons>a>img {
+        width: 100%;
+    }
+
+    .footer_icons>div:nth-child(2) {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        top: 20%;
+        margin: 0 5%;
+    }
+
+    .footer_icons>div:nth-child(2)>a {
+        position: unset;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .family_site {
+        position: absolute;
+        right: 0;
+        top: 20%;
+        width: 200px;
+        height: 50px;
+    }
+
+    .family_site_on {
+        height: 100px;
+    }
+
+    .family_site>p:first-child {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        font-size: 0.9rem;
+    }
+
+    .family_site>p>img {
+        top: 45%;
+        right: 12%;
+    }
+
+    .family_site>p:last-child {
+        height: 50px;
+        font-size: 0.9rem;
+    }
+
+    .family_site>p:last-child>a {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding: 0 20px;
+    }
+}
