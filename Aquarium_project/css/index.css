@@ -1,0 +1,170 @@
+
+body {
+    height: 500vw;
+    font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', NanumGothic, 'Malgun Gothic', sans-serif;
+    /* -webkit-overflow-scrolling: touch; */
+    color: #555;
+    background: #001f3c;
+    transition: background .5s;
+}
+
+.world {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+
+.house {
+    width: 100vw;
+    height: 100vh;
+    transform: translateZ(-490vw);
+    transform-style: preserve-3d;
+}
+
+.wall {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.wall-left {
+    width: 1000vw;
+    transform: rotateY(90deg) translateZ(-500vw);
+    display: flex;
+}
+
+.wall-left-img {
+    width: 100%;
+    height: 100%;
+}
+
+.wall-left-img:nth-child(1) {
+    background: url(../img/gif/seal.gif) no-repeat center / cover ;
+}
+.wall-left-img:nth-child(2) {
+    background: url(../img/gif/fish2.gif) no-repeat center / cover ;
+}
+.wall-left-img:nth-child(3) {
+    background: url(../img/gif/jellyfish2.gif) no-repeat center / cover ;
+}
+.wall-left-img:nth-child(4) {
+    background: url(../img/gif/stingray2.gif) no-repeat center / cover ;
+}
+.wall-left-img:nth-child(5) {
+    background: url(../img/gif/shark2.gif) no-repeat center / cover ;
+}
+.wall-left-img:nth-child(6) {
+    background: url(../img/gif/penguin.gif) no-repeat center / cover ;
+}
+.wall-left-img:nth-child(7) {
+    background: url(../img/gif/jellyfish1.gif) no-repeat center / cover ;
+}
+.wall-left-img:nth-child(8) {
+    background: url(../img/gif/shark1.gif) no-repeat center / cover ;
+}
+.wall-left-img:nth-child(9) {
+    background: url(../img/gif/stingray1.gif) no-repeat center / cover ;
+}
+.wall-left-img:nth-child(10) {
+    background: url(../img/gif/turtle1.gif) no-repeat center / cover ;
+}
+
+.wall-right-img:nth-child(1) {
+    background: url(../img/gif/shark2.gif) no-repeat center / cover ;
+}
+.wall-right-img:nth-child(2) {
+    background: url(../img/gif/turtle1.gif) no-repeat center / cover ;
+}
+.wall-right-img:nth-child(3) {
+    background: url(../img/gif/seal.gif) no-repeat center / cover ;
+}
+.wall-right-img:nth-child(4) {
+    background: url(../img/gif/fish2.gif) no-repeat center / cover ;
+}
+.wall-right-img:nth-child(5) {
+    background: url(../img/gif/stingray2.gif) no-repeat center / cover ;
+}
+.wall-right-img:nth-child(6) {
+    background: url(../img/gif/jellyfish1.gif) no-repeat center / cover ;
+}
+.wall-right-img:nth-child(7) {
+    background: url(../img/gif/stingray1.gif) no-repeat center / cover ;
+}
+.wall-right-img:nth-child(8) {
+    background: url(../img/gif/jellyfish2.gif) no-repeat center / cover ;
+}
+.wall-right-img:nth-child(9) {
+    background: url(../img/gif/penguin.gif) no-repeat center / cover ;
+}
+.wall-right-img:nth-child(10) {
+    background: url(../img/gif/shark1.gif) no-repeat center / cover ;
+}
+
+
+.wall-right {
+    width: 1000vw;
+    transform: rotateY(90deg) translateZ(-400vw);
+    display: flex;
+}
+
+.wall-right-img {
+    width: 100%;
+    height: 100%;
+}
+
+.wall-left>div, .wall-right>div {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.wall-content-a {
+    width: 100%;
+    height: 100%;
+    background: url(../img/gif/text.gif) no-repeat center / cover;
+    opacity: 50%;
+
+}
+
+.wall-front-a {
+    transform: translateZ(200vw);
+}
+
+.wall-front-b {
+    transform: translateZ(-200vw);
+}
+
+.wall-front-c {
+    transform: translateZ(-500vw);
+}
+
+
+.progress-bar-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 6px;
+    background: #eee;
+    border-bottom: 1px solid #999;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #ee0;
+}
