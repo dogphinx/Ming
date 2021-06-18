@@ -8,6 +8,7 @@
     <title>Sea Life</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/d8d6396f4d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,7 +22,11 @@
             <div class="house">
                 <section class="wall wall-left">
                     <div class="wall-left-img"></div>
-                    <div class="wall-left-img"></div>
+                    <div class="wall-left-img">
+                        <a href="html/performance_info.html">
+                            <div class="wall-left-door"></div>
+                        </a>
+                    </div>
                     <div class="wall-left-img"></div>
                     <div class="wall-left-img"></div>
                     <div class="wall-left-img"></div>
@@ -33,7 +38,11 @@
                 </section>
                 <section class="wall wall-right">
                     <div class="wall-right-img"></div>
-                    <div class="wall-right-img"></div>
+                    <div class="wall-right-img">
+                        <a href="html/ticket_info.html">
+                            <div class="wall-right-door wall-right-door-open"></div>
+                        </a>
+                    </div>
                     <div class="wall-right-img"></div>
                     <div class="wall-right-img"></div>
                     <div class="wall-right-img"></div>
@@ -47,16 +56,34 @@
                     <div class="wall-content-a"></div>
                 </section>
                 <section class="wall wall-front wall-front-b">
-                    <div class="wall-content"></div>
+                    <div class="wall-content-b">
+                        <div class="slide fade">
+                            <img class="slide-1" src="./img/gif/text2.gif" alt="">
+                        </div>
+                        <div class="slide fade">
+                            <img class="slide-2" src="./img/gif/text3.gif" alt="">
+                        </div>
+                        <div class="slide fade">
+                            <img class="slide-3" src="./img/gif/text4.gif" alt="">
+                        </div>
+
+                    </div>
                 </section>
                 <section class="wall wall-front wall-front-c">
-                    <div class="wall-content"></div>
+                    <div class="wall-content-c">
+                        <div class="entrance-wall"></div>
+                        <a href="javascript:link()">
+                            <div class="inside-door"></div>
+                            <div class="door left-door"></div>
+                            <div class="door right-door"></div>
+                        </a>
+                    </div>
                 </section>
             </div>
 
             <!-- 꼬부기 -->
-            <div class="charcter">
-                <div class="chracter-face-con character-head">
+            <div class="character">
+                <div class="character-face-con character-head">
                     <div class="character-face character-head-face face-front"></div>
                     <div class="character-face character-head-face face-back"></div>
                 </div>
@@ -80,11 +107,36 @@
                     <div class="character-face character-leg-face face-front"></div>
                     <div class="character-face character-leg-face face-back"></div>
                 </div>
+                <div class="character-face-con character-tail">
+                    <div class="character-face character-tail-face face-front"></div>
+                    <div class="character-face character-tail-face face-back"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="guide-con">
+        <div class="guide guide-1">
+            <div>
+                <p>'꼬부기' 캐릭터를 자유롭게 움직여보세요!</p>
+                <p>키보드 방향키로 움직일 수 있으며, 마우스 휠을 이용하여 앞뒤로 다닐 수 있습니다.</p>
+                <p>문을 클릭하면 해당하는 곳으로 입장합니다.</p>
+                <p>즐거운 관람 되시길 바랍니다.</p>
+                <i class="fas fa-window-close"></i>
+            </div>
+        </div>
+        <div class="guide guide-2 none">
+            <div>
+                <p>문을 클릭하면 메인페이지로 입장합니다.</p>
+                <i class="fas fa-window-close"></i>
             </div>
         </div>
     </div>
 
     <script src="js/3D_wall.js"></script>
+    <script src="js/guide.js"></script>
+    <script src="js/slide.js"></script>
+    <script src="js/door_open.js"></script>
 </body>
 
 </html>
