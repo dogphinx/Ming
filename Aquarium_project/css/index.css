@@ -637,3 +637,51 @@ body::-webkit-scrollbar-track {
 .guide.none {
     display: none;
 }
+
+/* 로딩화면 */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.8)
+}
+
+.loading-shape {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 10vw;
+    height: 10vw;
+    margin: -5vw 0 0 -5vw;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid dodgerblue;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading p {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 1.8rem;
+    color: white;
+    white-space: nowrap;
+}
+
+.loading.none {
+    display: none;
+}

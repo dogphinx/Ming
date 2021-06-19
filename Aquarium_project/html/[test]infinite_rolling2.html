@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            height: 100px;
+            background-color: #ff0;
+            /*overflow:hidden;*/
+        }
+
+        ul {
+            position: absolute;
+            background-color: lightgray;
+        }
+
+        ul:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        li {
+            float: left;
+            height: 40px;
+            padding: 0 20px;
+            font-size: 12px;
+            font-family: 나눔고딕;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .aa {
+            background-color: skyblue
+        }
+
+        .bb {
+            background-color: orange
+        }
+
+        .cc {
+            background-color: red
+        }
+
+        .dd {
+            background-color: lime
+        }
+
+        .ee {
+            background-color: gray
+        }
+
+        .ff {
+            background-color: pink
+        }
+
+        .gg {
+            background-color: purple
+        }
+
+        .hh {
+            background-color: green
+        }
+
+        .btn-area {
+            text-align: center;
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="aa">00-뽀로로</li>
+            <li class="bb">01-슈퍼맨</li>
+            <li class="cc">02-꽃</li>
+            <li class="dd">03-어벤져스</li>
+            <li class="ee">04-폭풍</li>
+            <li class="ff">05-바다</li>
+            <li class="gg">06-부평</li>
+            <li class="hh">07-주안</li>
+        </ul>
+    </div>
+    <div class="btn-area">
+        <button class="btn0">시작</button>
+        <button class="btn1">정지</button>
+    </div>
+<!-- 
+    <script>
+        /* 함수 및 액션 */
+
+        move = true;
+
+        function leftmove() {
+            $("ul").css({
+                "left": "-=1px"
+            });
+            w1st = -($("ul li").first().width() + 40); // first() : 선택한 요소중 첫번째 요소
+            w2nd = -($("ul li").first().next().width() + 40); // next() : 다음 형제요소 선택
+            live_margin = parseInt($("ul").css("left"));
+            if (w1st + w2nd == live_margin) {
+                $("ul").append($("ul li").first());
+                $("ul").css({
+                    "left": w2nd
+                });
+            }
+        }
+
+        /* 초기셋팅 */
+        var total_li = 0;
+        var flm_total_li = 0;
+        $("li").each(function () {
+            total_li = total_li + $(this).width() + 41;
+        });
+        $("li").not(":first-child, :last-child").each(function () {
+            flm_total_li = flm_total_li + $(this).width() + 41;
+        });
+        $("ul").width(total_li);
+        $("div").width(flm_total_li).css("margin", "50px auto");
+
+        liw = -($("ul li").first().width() + 40);
+        $("ul").css({
+            "left": liw
+        });
+
+
+        $(".btn0").click(function () {
+            lmove = setInterval(leftmove, 1000 / 40);
+        });
+        $(".btn1").click(function () {
+            clearInterval(lmove);
+        });
+    </script> -->
+    <script>
+    (function() {
+        const ulElem = document.querySelector('ul');
+        let leftValue = 20;
+        let move = true;
+        let firstLiWidth = 400;
+        let secondLiWidth = 400;
+
+
+        function leftMove() {
+            let liElem = document.querySelectorAll('li')
+
+            leftValue -= 1;
+            ulElem.style.left = value + 'px';
+
+            let li1st = -(firstLiWidth + 40);
+            let li2nd = -(secondLiWidth + 40);
+
+
+
+        }
+    })();
+    </script>
+</body>
+
+</html>

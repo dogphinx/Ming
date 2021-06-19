@@ -14,6 +14,6 @@
 
 function link() {
     setTimeout(function() {
-        location.href = 'html/main.html';
+        location.href = '../html/whole_info.html';
     }, 800);
 }
