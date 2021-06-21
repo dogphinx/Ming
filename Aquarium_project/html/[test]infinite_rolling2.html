@@ -1,164 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>multiple slide loop</title>
+    <link rel="stylesheet" href="../css/reset.css">
     <style>
-        div {
+        .slide_wrapper {
             position: relative;
-            height: 100px;
-            background-color: #ff0;
-            /*overflow:hidden;*/
+            width: 660px;
+            margin: 0 auto;
+            height: 200px;
+            overflow: hidden;
         }
 
-        ul {
+        .slides {
             position: absolute;
-            background-color: lightgray;
+            left: 0;
+            top: 0;
         }
 
-        ul:after {
-            content: '';
-            display: block;
-            clear: both;
+        .slides.animated {
+            transition: 0.5s ease-out;
         }
 
-        li {
+        .slides li {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
             float: left;
-            height: 40px;
-            padding: 0 20px;
-            font-size: 12px;
-            font-family: 나눔고딕;
+        }
+
+        .slides li:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        .controls {
             text-align: center;
-            line-height: 40px;
+            margin-top: 250px;
         }
 
-        .aa {
-            background-color: skyblue
-        }
-
-        .bb {
-            background-color: orange
-        }
-
-        .cc {
-            background-color: red
-        }
-
-        .dd {
-            background-color: lime
-        }
-
-        .ee {
-            background-color: gray
-        }
-
-        .ff {
-            background-color: pink
-        }
-
-        .gg {
-            background-color: purple
-        }
-
-        .hh {
-            background-color: green
-        }
-
-        .btn-area {
-            text-align: center;
-            background-color: transparent;
+        .controls span {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <ul>
-            <li class="aa">00-뽀로로</li>
-            <li class="bb">01-슈퍼맨</li>
-            <li class="cc">02-꽃</li>
-            <li class="dd">03-어벤져스</li>
-            <li class="ee">04-폭풍</li>
-            <li class="ff">05-바다</li>
-            <li class="gg">06-부평</li>
-            <li class="hh">07-주안</li>
+    <div class="slide-wrapper">
+        <ul class="slides">
+            <li>slide 01</li>
+            <li>slide 02</li>
+            <li>slide 03</li>
+            <li>slide 04</li>
+            <li>slide 05</li>
         </ul>
     </div>
-    <div class="btn-area">
-        <button class="btn0">시작</button>
-        <button class="btn1">정지</button>
-    </div>
-<!-- 
+
+    <p class="controls">
+        <span class="prev">prev</span>
+        <span class="next">next</span>
+    </p>
+
     <script>
-        /* 함수 및 액션 */
+        const slides = document.querySelector('.slides'),
+            slide = document.querySelectorAll('.slides li'),
+            slideCount = slide.length,
+            slideWidth = 200,
+            slideMargin = 30,
+            prevBtn = document.querySelector('.prev'),
+            nextBtn = document.querySelector('.next');
+        let currentIdx = 0;
 
-        move = true;
+            function makeClone() {
+                // 슬라이드의 갯수에 따라서 앞과 뒤에다가 둘다 복사본을 추가할거에요.
+                for (let i = 0; i < slideCount; i++) {
+                    // 자바스크립트에서 요소를 복사하는 방법은 클론노드가 있습니다.
+                    // a.cloneNode() : a 요소를 그대로 복사
+                    // a.cloneNode(true)  : a 요소의 자식요소까지 모두 복사
+                    let cloneSlide = slide[i].cloneNode(true);
+                    cloneSlide.classList.add('clone');
+                    // a.appendChild(b) : a 요소의 기존의 내용 뒤에다가 b 를 추가하는 거에요.
+                    slides.appendChild(cloneSlide);
+                }
+                for (let i = slideCount - 1; i >= 0; i--) {
+                    let cloneSlide = slide[i].cloneNode(true);
+                    cloneSlide.classList.add('clone');
+                    // a.prepend(b) : a 요소의 기존의 내용 앞에다가 b 를 추가.
+                    slides.prepend(cloneSlide);
+                }
+                updateWidth();
+                setInitialPos();
+                setTimeout(function () {
+                    slides.classList.add('animated');
+                }, 100)
+            }
 
-        function leftmove() {
-            $("ul").css({
-                "left": "-=1px"
-            });
-            w1st = -($("ul li").first().width() + 40); // first() : 선택한 요소중 첫번째 요소
-            w2nd = -($("ul li").first().next().width() + 40); // next() : 다음 형제요소 선택
-            live_margin = parseInt($("ul").css("left"));
-            if (w1st + w2nd == live_margin) {
-                $("ul").append($("ul li").first());
-                $("ul").css({
-                    "left": w2nd
-                });
+        function updateWidth() {
+            const currentSlides = document.querySelectorAll('.slides li'),
+                newSlideCount = currentSlides.length,
+                newWidth = (slideWidth + slideMargin) * newSlideCount - slideMargin + 'px';
+            slides.style.width = newWidth;
+        }
+
+        function setInitialPos() {
+            let initialTranslateValue = -(slideWidth + slideMargin) * slideCount;
+            // slides { transform: translateX(-1000px);}
+            slides.style.transform = 'translateX(' + initialTranslateValue + 'px)';
+        }
+
+        nextBtn.addEventListener('click', function () {
+            moveSlide(currentIdx + 1);
+        });
+        prevBtn.addEventListener('click', function () {
+            moveSlide(currentIdx - 1);
+        });
+
+        function moveSlide(num) {
+            slides.style.left = -num * (slideWidth + slideMargin) + 'px';
+            currentIdx = num;
+            console.log(currentIdx, slideCount);
+
+            if (currentIdx === slideCount || currentIdx === -slideCount) {
+                setTimeout(function() {
+                    slides.classList.remove('animated');
+                    slides.style.left = '0px';
+                    currentIdx = 0;
+                }, 500);
+
+                setTimeout(function() {
+                    slides.classList.add('animated');
+                }, 600)
             }
         }
 
-        /* 초기셋팅 */
-        var total_li = 0;
-        var flm_total_li = 0;
-        $("li").each(function () {
-            total_li = total_li + $(this).width() + 41;
-        });
-        $("li").not(":first-child, :last-child").each(function () {
-            flm_total_li = flm_total_li + $(this).width() + 41;
-        });
-        $("ul").width(total_li);
-        $("div").width(flm_total_li).css("margin", "50px auto");
-
-        liw = -($("ul li").first().width() + 40);
-        $("ul").css({
-            "left": liw
-        });
-
-
-        $(".btn0").click(function () {
-            lmove = setInterval(leftmove, 1000 / 40);
-        });
-        $(".btn1").click(function () {
-            clearInterval(lmove);
-        });
-    </script> -->
-    <script>
-    (function() {
-        const ulElem = document.querySelector('ul');
-        let leftValue = 20;
-        let move = true;
-        let firstLiWidth = 400;
-        let secondLiWidth = 400;
-
-
-        function leftMove() {
-            let liElem = document.querySelectorAll('li')
-
-            leftValue -= 1;
-            ulElem.style.left = value + 'px';
-
-            let li1st = -(firstLiWidth + 40);
-            let li2nd = -(secondLiWidth + 40);
-
-
-
-        }
-    })();
+        makeClone();
     </script>
 </body>
 
