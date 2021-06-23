@@ -20,7 +20,7 @@
     }
 
     guideCon.addEventListener('click', function (e) {
-        console.log(e.currentTarget);
+        // console.log(e.currentTarget);
         
         if (e.target === closeElem[0]) {
             guideElem[0].classList.add('none');

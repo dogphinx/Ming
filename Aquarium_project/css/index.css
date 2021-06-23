@@ -79,16 +79,29 @@ body::-webkit-scrollbar-track {
 .wall-left-img:nth-child(2) {
     position: relative;
     background: url(../img/door3_wall.jpg) no-repeat center / cover;
+    perspective: 1000px;
+}
+
+.wall-left-img:nth-child(2) a {
+    transform-style: preserve-3d;
 }
 
 .wall-left-img:nth-child(2) .wall-left-door {
-    width: calc(288 / 1440 * 100%);
-    height: calc(477 / 841 * 100%);
+    width: calc(212 / 1440 * 100%);
+    height: calc(489 / 841 * 100%);
     position: absolute;
-    left: 50%;
+    left: 49.8%;
     bottom: 0;
-    transform: translateX(-50%);
-    background: url(../img/door3.png) no-repeat center / contain;
+    transform: translateX(-50%) rotateY(0deg);
+    transform-origin: right;
+    background: url(../img/door3.png) no-repeat 0% 55% / cover;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.wall-left-img:nth-child(2) .wall-left-door.door-open {
+    transform: translateX(-50%) rotateY(140deg);
 }
 
 .wall-left-img:nth-child(3) {
@@ -132,17 +145,29 @@ body::-webkit-scrollbar-track {
 .wall-right-img:nth-child(2) {
     position: relative;
     background: url(../img/door2_wall_reverse.jpg) no-repeat center / cover;
+    perspective: 1000px;
+}
+
+.wall-right-img:nth-child(2) a {
+    transform-style: preserve-3d;
 }
 
 .wall-right-img:nth-child(2) .wall-right-door {
-    width: calc(300 / 1440 * 100%);
-    height: calc(520 / 823 * 100%);
+    width: calc(212 / 1440 * 100%);
+    height: calc(530 / 841 * 100%);
     position: absolute;
     left: 50%;
     bottom: 0;
-    transform: translateX(-50%);
-    background: url(../img/door2_reverse.png) no-repeat center / contain;
+    transform: translateX(-50%) rotateY(0deg);
     transform-origin: right;
+    background: url(../img/door2_reverse.png) no-repeat 0% 55% / cover;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.wall-right-img:nth-child(2) .wall-right-door.door-open {
+    transform: translateX(-50%) rotateY(140deg);
 }
 
 .wall-right-img:nth-child(3) {
@@ -271,12 +296,13 @@ body::-webkit-scrollbar-track {
 }
 
 .door {
-    background: yellowgreen;
+    /* background: yellowgreen; */
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 33vw;
+    width: 24vw;
     height: 100%;
+    cursor: pointer;
     transition: all 0.5s;
 }
 
@@ -303,7 +329,6 @@ body::-webkit-scrollbar-track {
 .right-door.right-door-open {
     transform: translateX(50%);
 }
-
 
 
 /* 진행 막대기 바 */
@@ -597,6 +622,7 @@ body::-webkit-scrollbar-track {
     flex-direction: column;
     align-items: center;
 }
+
 .guide {
     position: fixed;
     left: 50%;
@@ -667,6 +693,7 @@ body::-webkit-scrollbar-track {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }

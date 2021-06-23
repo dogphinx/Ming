@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,48 +8,30 @@
     <title>Sea Life</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/whole_info.css">
-    <style>
-        body {
-            background: #222;
-        }
-
-        @keyframes spaceship-ani {
-            to {
-                background-position: -3000px 0;
-            }
-
-        }
-
-
-        .spaceship {
-            width: 500px;
-            height: 500px;
-            background: url(../img/ggobugi/hand/ggobugi_hand_sprite.png) no-repeat 0 0 / auto 500px;
-            animation: spaceship-ani .3s steps(6) forwards;
-
-            position: absolute;
-            top: 55%;
-        }
-
-        .face {
-            position: absolute;
-            left: 30%;
-            top: 5%;
-            width: 800px;
-            height: 800px;
-            background: url(../img/ggobugi/hand/big_face.png) no-repeat 0 0 / auto 800px;
-        }
-
-        .two {
-            position: absolute;
-            right: 3%;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/d8d6396f4d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>메인페이지 성공!</h1>
-    <div class="spaceship"></div>
-    <div class="face"></div>
-    <div class="spaceship two"></div>
+    <h1><img src="../img/sea-life-busan-white.webp"
+            alt="logo"></h1>
+
+    <div class="slide-wrapper">
+        <ul class="slides clear">
+            <li class="li-1"><a href="javascript:void(0)" class="page index">입장하기</a></li>
+            <li class="li-2"><a href="javascript:void(0)" class="page performance">입장하기</a></li>
+            <li class="li-3"><a href="javascript:void(0)" class="page ticket">입장하기</a></li>
+        </ul>
+    </div>
+    <p class="controls">
+        <span class="prev"><i class="fas fa-angle-left"></i> 이전</span>
+        <span class="stop">Auto Stop</span>
+        <span class="play none">Auto Play</span>
+        <span class="next">다음 <i class="fas fa-angle-right"></i></span>
+    </p>
+
+    <div class="star"></div>
+
+    <script src="../js/infinite_rolling.js"></script>
 </body>
+
 </html>

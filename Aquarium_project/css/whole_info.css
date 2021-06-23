@@ -1,0 +1,182 @@
+body {
+    background: #001f3c;
+}
+
+h1 {
+    width: 20vw;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* infinite slide */
+.slide-wrapper {
+    position: relative;
+    width: 100vw;
+    margin: 0 auto;
+    height: 30vw;
+    overflow: hidden;
+    margin-top: 6%;
+    z-index: 1;
+}
+
+.slides {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.slides.animated {
+    transition: 0.5s ease-out;
+}
+
+.slides li {
+    width: 49vw;
+    height: 30vw;
+    background: #ccc;
+    float: left;
+    border: 5px solid rgba(0, 20, 54, 0.5);
+    cursor: pointer;
+}
+
+.slides li:not(:last-child) {
+    margin-right: 2vw;
+}
+
+.slides .li-1 {
+    /* background: url(../img/gif/text5.gif) no-repeat center / cover; */
+    background: url(../img/gif/text5_test.gif) no-repeat center / cover;
+}
+
+.slides .li-2 {
+    /* background: url(../img/gif/show.gif) no-repeat center / cover; */
+    background: url(../img/gif/show2_test.gif) no-repeat center / cover;
+}
+
+.slides .li-3 {
+    /* background: url(../img/gif/ticket.gif) no-repeat center / cover; */
+    background: url(../img/gif/ticket_test.gif) no-repeat center / cover;
+}
+
+.slides li a {
+    text-decoration-line: unset;
+    display: block;
+    width: 0%;
+    height: 15%;
+    position: relative;
+    left: 50%;
+    top: 85%;
+    transform: translateX(-50%);
+    background: yellow;
+    color: #001f3c;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 5rem;
+    border: 2px dashed gray;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.slides li a.stretch {
+    width: 100%;
+    opacity: 1;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 1.5%;
+    position: relative;
+}
+
+.controls span {
+    background: #ffff;
+    color: #001f3c;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 5px;
+    z-index: 999;
+    font-family: '나눔고딕';
+    font-size: 1.4rem;
+}
+
+.controls span i {
+    font-size: 1rem;
+}
+
+.none {
+    display: none;
+}
+
+.controls>.stop, .controls>.play {
+    background: rgb(189, 240, 236);
+}
+
+
+.star {
+    width: 10vw;
+    height: 10vw;
+    background: url(../img/star.png) no-repeat 0 0 / contain;
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    animation: star-move 2.5s 5 alternate linear forwards;
+    
+}
+
+@keyframes star-move {
+    30% {
+        transform: none;
+    }
+    95% {
+        transform: translateX(-680%) rotateZ(-360deg);
+    }
+    100% {
+        transform: translateX(-680%) rotateZ(-360deg);
+    }
+}
+
+/* character */
+@keyframes grab {
+    to {
+        /* background-position: -3000px 0; */
+        background-position: -1800px 0;
+    }
+}
+
+.character-face {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    width: 450px;
+    height: 450px;
+    background: url(../img/ggobugi/hand/big_face.png) no-repeat 0 0 / auto 450px;
+    transform: translateX(-50%);
+    animation: show-face 0.5s forwards;
+}
+
+@keyframes show-face {
+    to {
+        transform: translateX(-50%) translateY(-80%);
+    }
+}
+
+.character-hand {
+    width: 300px;
+    height: 300px;
+    background: url(../img/ggobugi/hand/ggobugi_hand_sprite.png) no-repeat 0 0 / auto 300px;
+    animation: grab .2s steps(6) forwards;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    z-index: 10;
+}
+
+.character-right-hand {
+    position: absolute;
+    left: 59%;
+}
