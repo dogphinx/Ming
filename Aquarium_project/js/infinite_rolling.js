@@ -66,7 +66,7 @@
 
         autoID = setTimeout(function () {
             moveAuto();
-        }, 1800);
+        }, 1950);
     }
 
     function moveBtn(e) {

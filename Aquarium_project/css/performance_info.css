@@ -1,0 +1,185 @@
+.perspective {
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+    position: relative;
+    overflow: hidden;
+    background: #001f3c;
+}
+
+.hexahedron {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    animation: hexahedron-move2 3s forwards;
+    transform-origin: center;
+}
+
+@keyframes hexahedron-move2 {
+    0% {
+        transform: translateX(1300%) translateY(-750%) translateZ(-800px) rotateX(-10deg) rotateY(10deg) rotateZ(0deg);
+    }
+
+    50% {
+        transform: translateX(350%) translateY(50%) translateZ(-700px) rotateX(-10deg) rotateY(10deg) rotateZ(-720deg);
+    }
+
+    65% {
+        transform: translateX(50%) translateY(-350%) translateZ(-500px) rotateX(-10deg) rotateY(10deg) rotateZ(-1260deg);
+    }
+
+    75% {
+        transform: translateX(-50%) translateY(50%) translateZ(-300px) rotateX(-10deg) rotateY(10deg) rotateZ(-1620deg);
+    }
+
+    85% {
+        transform: translateX(-250%) translateY(-150%) translateZ(-300px) rotateX(-10deg) rotateY(10deg) rotateZ(-1755deg);
+    }
+
+    93% {
+        transform: translateX(-300%) translateY(50%) translateZ(0px) rotateX(-10deg) rotateY(10deg) rotateZ(-1935deg);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(-1980deg) scale(15);
+    }
+}
+
+.hexahedron-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.hexahedron .hexahedron-1 {
+    background: rgba(112, 161, 255, 0.7);
+    animation: hexahedron-1-ani2 3s;
+}
+
+@keyframes hexahedron-1-ani2 {
+    0% {
+        background: rgba(112, 161, 255, 0.7);
+    }
+    90% {
+        background: rgba(112, 161, 255, 0.9);
+    }
+
+    100% {
+        background: rgba(112, 161, 255, 1);
+    }
+}
+
+.hexahedron .hexahedron-2 {
+    background: rgba(255, 99, 72, 0.7);
+    transform: translateX(75px) translateZ(-75px) rotateY(90deg);
+}
+.hexahedron .hexahedron-3 {
+    background: rgba(255, 165, 2, 0.7);
+    transform: translateX(-75px) translateZ(-75px) rotateY(270deg);
+}
+.hexahedron .hexahedron-4 {
+    background: rgba(46, 213, 115, 0.7);
+    transform: translateY(-75px) translateZ(-75px) rotateX(90deg) ;
+}
+.hexahedron .hexahedron-5 {
+    background: rgba(255, 107, 129, 0.7);
+    transform: translateY(75px) translateZ(-75px) rotateX(90deg) ;
+}
+.hexahedron .hexahedron-6 {
+    background: rgba(2, 25, 250, 0.9);
+    transform: translateZ(-150px);
+}
+
+
+.menu-motion {
+    position: fixed;
+    background: rgba(112, 161, 255, 1);
+    animation: move-menu 3s forwards;
+}
+
+@keyframes move-menu {
+    0% {
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vw;
+        opacity: 1;
+        border-radius: 0%;
+        transform: rotateZ(0deg);
+    }
+
+    5% {
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vw;
+        opacity: 1;
+        border-radius: 0%;
+        transform: rotateZ(0deg);
+    }
+
+    20% {
+        left: 50%;
+        top: 50%;
+        width: 70vw;
+        height: 70vw;
+        opacity: 1;
+        border-radius: 0%;
+        transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+    }
+
+    38% {
+        left: 50%;
+        top: 50%;
+        width: 60vw;
+        height: 60vw;
+        opacity: 1;
+        border-radius: 5%;
+        transform: translateX(-50%) translateY(-50%) rotateZ(90deg);
+    }
+
+    55% {
+        left: 60%;
+        top: 60%;
+        width: 40vw;
+        height: 40vw;
+        opacity: 1;
+        border-radius: 20%;
+        transform: translateX(-50%) translateY(-50%) rotateZ(135deg);
+    }
+
+    72% {
+        left: 70%;
+        top: 70%;
+        width: 20vw;
+        height: 20vw;
+        opacity: 1;
+        border-radius: 35%;
+        transform: translateX(-50%) translateY(-50%) rotateZ(180deg);
+    }
+
+    90% {
+        left: 85%;
+        top: 75%;
+        width: 10vw;
+        height: 10vw;
+        opacity: 1;
+        border-radius: 50%;
+        transform: translateX(-50%) translateY(-50%) rotateZ(270deg);
+    }
+
+    100% {
+        left: 90%;
+        top: 80%;
+        width: 5vw;
+        height: 5vw;
+        opacity: 0.6;
+        border-radius: 50%;
+        transform: translateX(-50%) translateY(-50%) rotateZ(270deg);
+    }
+}
