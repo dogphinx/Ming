@@ -1,0 +1,154 @@
+/* 미니 메뉴버튼 */
+.gnb {
+    position: fixed;
+    left: 87.4%;
+    bottom: 12.5%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    z-index: 60;
+}
+
+.mini-gnb,
+.sub-gnb li {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url(../img/bubble1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    transition: all .6s;
+    font-family: 'Jua', sans-serif;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-size: 1.2rem;
+    text-shadow: 1.5px 2px rgba(250, 250, 0, 0.4);
+}
+
+.mini-gnb.bubble {
+    animation: bubble2 .35s cubic-bezier(0.34, 0.53, 0.36, 1.05) 0s 1 forwards;
+}
+
+
+.sub-gnb li {
+    transform: scale(0);
+}
+
+.sub-gnb li p {
+    pointer-events: none;
+}
+
+
+.sub-gnb {
+    transition: all .25s;
+}
+
+.sub-gnb.none {
+    display: none;
+}
+
+
+.sub-gnb li:nth-of-type(1).show {
+    animation: bubble .35s cubic-bezier(0.34, 0.53, 0.36, 1.05) .7s forwards;
+}
+
+.sub-gnb li:nth-of-type(2).show {
+    animation: bubble .35s cubic-bezier(0.34, 0.53, 0.36, 1.05) .35s forwards;
+}
+
+.sub-gnb li:nth-of-type(3).show {
+    animation: bubble .35s cubic-bezier(0.34, 0.53, 0.36, 1.05) 0s forwards;
+}
+
+/* reverse */
+.sub-gnb li:nth-of-type(1).reverse {
+    transform: scale(1);
+    animation: bubble-reverse .35s cubic-bezier(0.34, 0.53, 0.36, 1.05) 0s forwards;
+}
+
+.sub-gnb li:nth-of-type(2).reverse {
+    transform: scale(1);
+    animation: bubble-reverse .35s cubic-bezier(0.34, 0.53, 0.36, 1.05) .35s forwards;
+}
+
+.sub-gnb li:nth-of-type(3).reverse {
+    animation: bubble-reverse .35s cubic-bezier(0.34, 0.53, 0.36, 1.05) .7s forwards;
+    transform: scale(1);
+}
+
+@keyframes bubble {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    90% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bubble-reverse {
+    0% {
+        transform: scale(1);
+    }
+    
+    10% {
+        transform: scale(1.1);
+    }
+    
+    20% {
+        transform: scale(1);
+    }
+    
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes bubble2 {
+    0% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1.1);
+    } 
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.sub-gnb li a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    word-break: keep-all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.sub-gnb li a p {
+    pointer-events: none;
+}
+
+.sub-gnb li:nth-of-type(1) a p {
+    padding-top: 10px;
+}

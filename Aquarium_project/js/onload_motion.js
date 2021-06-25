@@ -17,7 +17,7 @@
         // setTimeout(function() {
         //     menuMotionElem.remove();
         // }, 3200)
-    }
+    } 
 
     window.addEventListener('animationend', function () {
         deleteHexahedron();

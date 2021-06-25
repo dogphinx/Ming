@@ -8,12 +8,16 @@
     <title>Sea Life</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/ticket_info.css">
+    <link rel="stylesheet" href="../css/mini_menu_btn.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Single+Day&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d8d6396f4d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- <h1>예매안내 성공!</h1> -->
-
-    <div class="perspective">
+    <!-- 로딩되자마자 실행되는 모션 -->
+    <!-- <div class="perspective">
         <div class="hexahedron">
             <div class="hexahedron-face hexahedron-1"></div>
             <div class="hexahedron-face hexahedron-2"></div>
@@ -22,69 +26,153 @@
             <div class="hexahedron-face hexahedron-5"></div>
             <div class="hexahedron-face hexahedron-6"></div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
         <header>
             <h1>logo</h1>
             <div class="simple-ticketing-area">
                 <!-- 티켓들 넣고 innerText 에 갱신 -->
-                <div class="test"></div>
-                <div class="test"></div>
-                <div class="test"></div>
-                <div class="test"></div>
+                <div class="simple-ticket-num simple-ticket-num-1">
+                    <p>어린이 티켓</p>
+                    <p>수량 : &nbsp;<span class="ticket-1-value">0</span> 개</p>
+                </div>
+                <div class="simple-ticket-num simple-ticket-num-2">
+                    <p>성인 / 청소년 티켓</p>
+                    <p>수량 : &nbsp;<span class="ticket-2-value">0</span> 개</p>
+                </div>
+                <div class="simple-ticket-num simple-ticket-num-3">
+                    <p>해피타임 (평일 17:00 ~ 20:00) 티켓</p>
+                    <p>수량 : &nbsp;<span class="ticket-3-value">0</span> 개</p>
+                </div>
+                <div class="simple-ticket-num simple-ticket-num-4">
+                    <p>기업체 티켓</p>
+                    <p>수량 : &nbsp;<span class="ticket-4-value">0</span> 개</p>
+                </div>
             </div>
-                <button class="button_base b05_3d_roll">
-                    <div>구매하기</div>
-                    <div>구매하기</div>
-                </button>
+            <div class="sum">
+                <p>합계 : &nbsp;<span>0</span> 원</p>
+            </div>
+            <button class="sub-btn">
+                <div>구매하기</div>
+            </button>
         </header>
 
         <nav class="gnb">
             <div class="mini-gnb">메뉴</div>
-            <ul class="sub-gnb">
-                <li class="index"><p>아쿠아리움 탐험</p></li>
-                <li class="whole_ifo"><p>이전 페이지</p></li>
-                <li class="performance_info"><p>공연 정보</p></li>
+            <ul class="sub-gnb none">
+                <li class="index">
+                    <a href="../index.html">
+                        <p>아쿠아리움 탐험</p>
+                    </a>
+                </li>
+                <li class="whole_ifo">
+                    <a href="./whole_info.html">
+                        <p>메인 페이지</p>
+                    </a>
+                </li>
+                <li class="performance_info">
+                    <a href="./performance_info.html">
+                        <p>공연 정보</p>
+                    </a>
+                </li>
             </ul>
         </nav>
 
-        <!-- <section>
+        <section>
             <div class="guide-text">
                 <h2>무료 입장 안내</h2>
                 <ul>
-                    <li><p>36개월 이하 어린이</p></li>
-                    <li><p>65세 이상 경로대상자 (신분증)</p></li>
-                    <li><p>장애인 (장애인증, 장애인 복지카드)</p></li>
-                    <li><p>국가유공자 및 유족 (국가유공자증, 국가유공자유족증)</p></li>
+                    <li>
+                        <p>36개월 이하 어린이</p>
+                    </li>
+                    <li>
+                        <p>65세 이상 경로대상자 (신분증)</p>
+                    </li>
+                    <li>
+                        <p>장애인 (장애인증, 장애인 복지카드)</p>
+                    </li>
+                    <li>
+                        <p>국가유공자 및 유족 (국가유공자증, 국가유공자유족증)</p>
+                    </li>
                 </ul>
             </div>
-            
-            <div class="ticket ticket-1"></div>
-            <div class="ticket ticket-2"></div>
-            <div class="ticket ticket-3"></div>
-            <div class="ticket ticket-4"></div>
-            <button>구매하기</button>
-        </section>
 
-        <footer>
-            <h2>logo</h2>
-            <div class="footer-text-1">
-                <p>부산 아쿠아리움</p>
-                <address>48100 부산광역시 해운대구 해운대해변로 266(중동) (주)멀린엔터테인먼트코리아</address>
-                <p>사업자등록번호 618-00-0000</p>
-                <p>대표이사 이성호,로버트마크스미스</p>
-                <p>통신판매업신고번호 0000 000 000</p>
+            <div class="ticket ticket-1">
+                <img src="../img/ticket_1.png" alt="">
+                <p>어린이 (36개월 ~ 12세) 티켓</p>
+                <p>금액 :&nbsp; 20,000 원</p>
+                <p>
+                    수량 : &nbsp;<i class="fas fa-minus-square"></i>
+                    &nbsp;&nbsp;<span class="ticket-1-value">0</span>&nbsp;&nbsp;
+                    <i class="fas fa-plus-square"></i>
+                </p>
+                <p>합계 :&nbsp;&nbsp;<span class="ticket-1-sum">0</span> 원</p>
             </div>
-            <div class="footer-text-2">
-                <p>대표전화 051-740-1700</p>
-                <p>팩스 051-740-1717</p>
-                <p>단체문의 051-740-1711</p>
+            <div class="ticket ticket-2">
+                <img src="../img/ticket_2.png" alt="">
+                <p>성인 / 청소년 티켓</p>
+                <p>금액 :&nbsp; 50,000 원</p>
+                <p>
+                    수량 : &nbsp;<i class="fas fa-minus-square"></i>
+                    &nbsp;&nbsp;<span class="ticket-2-value">0</span>&nbsp;&nbsp;
+                    <i class="fas fa-plus-square"></i>
+                </p>
+                <p>합계 :&nbsp;&nbsp;<span class="ticket-2-sum">0</span> 원</p>
             </div>
-        </footer>
-    </div> -->
+            <div class="ticket ticket-3">
+                <img src="../img/ticket_3.png" alt="">
+                <p>해피타임 (평일 17:00 ~ 20:00) 티켓</p>
+                <p>금액 :&nbsp; 35,000 원</p>
+                <p>
+                    수량 : &nbsp;<i class="fas fa-minus-square"></i>
+                    &nbsp;&nbsp;<span class="ticket-3-value">0</span>&nbsp;&nbsp;
+                    <i class="fas fa-plus-square"></i>
+                </p>
+                <p>합계 :&nbsp;&nbsp;<span class="ticket-3-sum">0</span> 원</p>
+            </div>
+            <div class="ticket ticket-4">
+                <img src="../img/ticket_4.png" alt="">
+                <p>기업체 티켓</p>
+                <p>금액 :&nbsp; 40,000 원</p>
+                <p>
+                    수량 : &nbsp;<i class="fas fa-minus-square"></i>
+                    &nbsp;&nbsp;<span class="ticket-4-value">0</span>&nbsp;&nbsp;
+                    <i class="fas fa-plus-square"></i>
+                </p>
+                <p>합계 :&nbsp;&nbsp;<span class="ticket-4-sum">0</span> 원</p>
+            </div>
+            <button class="main-btn">구매하기</button>
+            <!-- <div class="modal hidden">
+                <div class="modal_overlay"></div>
+                <div class="modal_content">
+                </div> -->
+    </div>
+    </div>
+    </section>
 
-    <script src="../js/onload_motion.js"></script>
+    <footer>
+        <h2>logo</h2>
+        <div class="footer-text-1">
+            <h3>부산 아쿠아리움</h3>
+            <address>48100 부산광역시 해운대구 해운대해변로 266(중동) (주)멀린엔터테인먼트코리아</address>
+            <p>사업자등록번호 618-00-0000</p>
+            <p>대표이사 이성호,로버트마크스미스</p>
+            <p>통신판매업신고번호 0000 000 000</p>
+        </div>
+        <div class="footer-text-2">
+            <p>대표전화 051-740-1700</p>
+            <p>팩스 051-740-1717</p>
+            <p>단체문의 051-740-1711</p>
+        </div>
+    </footer>
+    </div>
+
+    <!-- <script src="../js/onload_motion.js"></script> -->
+    <script src="../js/ticket_button.js"></script>
+    <script src="../js/mini_menu_btn.js"></script>
+    <script src="../js/ticket_shop.js"></script>
+
 </body>
 
 </html>

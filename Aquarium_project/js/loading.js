@@ -6,7 +6,7 @@
         divElem.classList.add('loading');
         divElem.innerHTML = `
         <div class="loading-shape"></div>
-        <p>꼬부기가 아쿠아리움으로 오는 중입니다 ~ ♪</p>
+        <p>꼬부기가 이 곳으로 오는 중입니다 ~ ♪</p>
         `;
         bodyElem.appendChild(divElem);
     }
@@ -17,6 +17,8 @@
 
     loading_st();
 
-    window.onload = loading_ed;
+    window.addEventListener('load', function() {
+        loading_ed();
+    })
 
 })();
