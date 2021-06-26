@@ -9,7 +9,7 @@
         setTimeout(function () {
             guideElem[0].classList.add('none');
             guideElem[1].classList.add('none');
-        }, 7000)
+        }, 10000)
     }
 
 
