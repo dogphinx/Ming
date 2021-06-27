@@ -6,9 +6,10 @@ body {
     width: 100vw;
     height: 100vh;
     perspective: 1000px;
-    position: relative;
+    position: fixed;
     overflow: hidden;
     background: #001f3c;
+    z-index: 100;
 }
 
 .hexahedron {
@@ -119,6 +120,34 @@ body {
     position: fixed;
     background: rgba(235, 160, 172, 1);
     animation: move-menu 3s forwards;
+    z-index: 100;
+}
+
+.menu-motion-back {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vw;
+    z-index: 90;
+    animation: background-opacity 4.5s forwards;
+}
+
+@keyframes background-opacity {
+    0% {
+        background-color: black;
+        opacity: 1;
+    }
+    
+    /* 90% {
+        background-color: black;
+        opacity: 0.3;
+    } */
+
+    100% {
+        background-color: black;
+        opacity: 0;
+    }
 }
 
 @keyframes move-menu {
@@ -290,7 +319,11 @@ body {
     box-shadow: 0px 5px 10px rgba(0, 50, 120, 0.5);
     color: #001f3c;
     transform: translateY(-7px);
-} 
+}
+
+.sub-btn div {
+    pointer-events: none;
+}
 /* header 구매하기 버튼 끝 */
 
 
@@ -358,6 +391,10 @@ section {
 .ticket p:nth-of-type(4) {
     margin: 30px 0 0;
     font-size: 1.5rem;
+}
+
+.ticket p i {
+    cursor: pointer;
 }
 
 
@@ -452,17 +489,71 @@ section {
     position: relative;
     text-align: center;
     border-radius: 5px;
-    width: 400px;
+    width: 700px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* color: white; */
+    background: url(../img/t2.jpg) no-repeat center center / cover;
+}
+
+.modal_content button {
+    width: 150px;
+    height: 40px;
+    color: white;
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 255, 0.5);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .hidden {
     display: none;
 }
 
+.modal_content_text .nothing {
+    font-size: 2rem;
+    width: 100%;
+}
+
+.modal_content_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content_text div {
+    width: 90%;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    background: rgba(0, 0, 0, 0.4)
+}
+
+.modal_content_text p {
+    width: 50%;
+    margin: 15px 30px;
+}
+
+.modal_content .fa-times {
+    position: absolute;
+    right: 5%;
+    top: 4%;
+    font-size: 2rem;
+    cursor: pointer;
+}
 /* modal 끝 */
 
 

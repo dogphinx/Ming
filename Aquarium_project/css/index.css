@@ -358,6 +358,7 @@ body::-webkit-scrollbar-track {
     width: 20vw;
     height: 20vw;
     transform-style: preserve-3d;
+    pointer-events: none;
 }
 
 /* 꼬부기 방향 */

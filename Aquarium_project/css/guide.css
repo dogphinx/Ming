@@ -42,6 +42,7 @@
     right: 3%;
     top: 10%;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .guide.none {

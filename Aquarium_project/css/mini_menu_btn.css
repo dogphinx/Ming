@@ -9,6 +9,10 @@
     z-index: 60;
 }
 
+.gnb.hidden {
+    display: none;
+}
+
 .mini-gnb,
 .sub-gnb li {
     width: 100px;

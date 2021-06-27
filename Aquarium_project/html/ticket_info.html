@@ -17,7 +17,7 @@
 
 <body>
     <!-- 로딩되자마자 실행되는 모션 -->
-    <!-- <div class="perspective">
+    <div class="perspective">
         <div class="hexahedron">
             <div class="hexahedron-face hexahedron-1"></div>
             <div class="hexahedron-face hexahedron-2"></div>
@@ -26,7 +26,7 @@
             <div class="hexahedron-face hexahedron-5"></div>
             <div class="hexahedron-face hexahedron-6"></div>
         </div>
-    </div> -->
+    </div>
 
     <div class="container">
         <header>
@@ -58,7 +58,7 @@
             </button>
         </header>
 
-        <nav class="gnb">
+        <nav class="gnb hidden">
             <div class="mini-gnb">메뉴</div>
             <ul class="sub-gnb none">
                 <li class="index">
@@ -107,7 +107,7 @@
                     &nbsp;&nbsp;<span class="ticket-1-value">0</span>&nbsp;&nbsp;
                     <i class="fas fa-plus-square"></i>
                 </p>
-                <p>합계 :&nbsp;&nbsp;<span class="ticket-1-sum">0</span> 원</p>
+                <p>합계 :&nbsp;&nbsp;<span class="ticket-sum">0</span> 원</p>
             </div>
             <div class="ticket ticket-2">
                 <img src="../img/ticket_2.png" alt="">
@@ -118,7 +118,7 @@
                     &nbsp;&nbsp;<span class="ticket-2-value">0</span>&nbsp;&nbsp;
                     <i class="fas fa-plus-square"></i>
                 </p>
-                <p>합계 :&nbsp;&nbsp;<span class="ticket-2-sum">0</span> 원</p>
+                <p>합계 :&nbsp;&nbsp;<span class="ticket-sum">0</span> 원</p>
             </div>
             <div class="ticket ticket-3">
                 <img src="../img/ticket_3.png" alt="">
@@ -129,7 +129,7 @@
                     &nbsp;&nbsp;<span class="ticket-3-value">0</span>&nbsp;&nbsp;
                     <i class="fas fa-plus-square"></i>
                 </p>
-                <p>합계 :&nbsp;&nbsp;<span class="ticket-3-sum">0</span> 원</p>
+                <p>합계 :&nbsp;&nbsp;<span class="ticket-sum">0</span> 원</p>
             </div>
             <div class="ticket ticket-4">
                 <img src="../img/ticket_4.png" alt="">
@@ -140,14 +140,17 @@
                     &nbsp;&nbsp;<span class="ticket-4-value">0</span>&nbsp;&nbsp;
                     <i class="fas fa-plus-square"></i>
                 </p>
-                <p>합계 :&nbsp;&nbsp;<span class="ticket-4-sum">0</span> 원</p>
+                <p>합계 :&nbsp;&nbsp;<span class="ticket-sum">0</span> 원</p>
             </div>
             <button class="main-btn">구매하기</button>
-            <!-- <div class="modal hidden">
+            <div class="modal hidden">
                 <div class="modal_overlay"></div>
                 <div class="modal_content">
-                </div> -->
-    </div>
+                    <i class="fas fa-times"></i>
+                    <button>구매하기</button>
+                    <div class="modal_content_text"></div>
+                </div>
+            </div>
     </div>
     </section>
 
@@ -168,11 +171,9 @@
     </footer>
     </div>
 
-    <!-- <script src="../js/onload_motion.js"></script> -->
-    <script src="../js/ticket_button.js"></script>
+    <script src="../js/onload_motion.js"></script>
     <script src="../js/mini_menu_btn.js"></script>
     <script src="../js/ticket_shop.js"></script>
-
 </body>
 
 </html>
