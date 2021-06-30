@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer;
+                if ( a - b > 0 ) {
+                    if ( b - c > 0 ) {
+                        answer = c;
+                    } else {
+                        answer = b;
+                    }
+                } else if ( a - c > 0 ) {
+                    answer = c;
+                } else {
+                    answer = a;
+                }
+                return answer;
+            }
+
+            console.log(solution(2, 5, 1));
+            // console.log(solution(6, 5, 11));
+        </script>
+    </body>
+</html>
