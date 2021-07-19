@@ -2643,7 +2643,7 @@ footer>img:first-child {
 @media (min-width: 481px) and (max-width: 767px) {
 
     /* 헤더영역 */
-    header {
+    #container>header {
         top: 0%;
         background-color: rgba(0, 0, 0, 0.2);
         height: 70px;
